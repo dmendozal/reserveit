@@ -17,7 +17,7 @@
                         <input type="hidden" name="id" id="id1">
                     </div>
                     <div class="modal-footer">
-                            <button class="button button-primary">Guardar Cambios</button>
+                            <button class="btn btn-primary">Guardar Cambios</button>
                         </div>
         </form>
                 </div>

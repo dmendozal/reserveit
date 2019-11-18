@@ -2,12 +2,13 @@
 @section('title', 'Gestion de Roles')
 
 @section('content')
-<div class="col-12 mb-30">
-    <div class="box">
-        <div class="box-head">
-            <h3 class="title">Registrar Nuevo Rol</h3>
-        </div>
-        <div class="col-12 mb-20">
+<div class="row">
+        <div class="col-lg-12">
+            <div class="panel">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Registro de Nuevo Cargo</h3>
+                </div>
+                <div class="panel-body">
             <form action="{{route('roles.update',$role->id)}}" method="POST">
                 @csrf
                 @method('PUT')
@@ -35,18 +36,16 @@
                         @endforeach
                     </select>
                 </div>
-                <div>
-                    <button type="submit" class="button button-primary button-sm">Guardar Cambios</button>
-                    <a class="button button-danger button-sm" href="{{ route('roles.index') }}">Cancelar</a>
+                <div class="pull-right">
+                    <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+                    <a class="btn btn-danger" href="{{ route('roles.index') }}">Cancelar</a>
                 </div>
-
-
             </form>
         </div>
     </div>
 </div>
 
-
+</div>
 
 
 

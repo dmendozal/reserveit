@@ -4,332 +4,680 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Activos Fijos - @yield('title')</title>
-    <meta name="robots" content="noindex, follow" />
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="shortcut icon" type="image/x-icon" href="{{asset('assets/images/favicon.ico')}}">
-    <link rel="stylesheet" href="{{ asset('assets/css/vendor/bootstrap.min.css')}}">
-    <link rel="stylesheet" href="{{ asset('assets/css/vendor/material-design-iconic-font.min.css')}}">
-    <link rel="stylesheet" href="{{ asset('assets/css/vendor/font-awesome.min.css')}}">
-    <link rel="stylesheet" href="{{ asset('assets/css/vendor/themify-icons.css')}}">
-    <link rel="stylesheet" href="{{ asset('assets/css/vendor/cryptocurrency-icons.css')}}">
-    <link rel="stylesheet" href="{{ asset('assets/css/plugins/plugins.css')}}">
-    <link rel="stylesheet" href="{{ asset('assets/css/helper.css')}}">
-    <link rel="stylesheet" href="{{ asset('assets/css/style.css')}}">
-    <link id="cus-style" rel="stylesheet" href="{{asset('assets/css/style-primary.css')}}">
+    <title>Reserveit - @yield('title')</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+    <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{asset('css/nifty.min.css')}}" rel="stylesheet">
+    <link href="{{asset('css/demo/nifty-demo-icons.min.css')}}" rel="stylesheet">
+    <link href="{{asset('plugins/pace/pace.min.css')}}" rel="stylesheet">
+    <link href="{{asset('css/demo/nifty-demo.min.css')}}" rel="stylesheet">
+    <link href="{{asset('plugins/datatables/media/css/dataTables.bootstrap.css')}}" rel="stylesheet">
+    <link href="{{asset('plugins/datatables/extensions/Responsive/css/responsive.dataTables.min.css')}}" rel="stylesheet">
+    
+    <link href="{{asset('plugins/select2/css/select2.min.css')}}" rel="stylesheet">
+    <link href="{{asset('plugins/bootstrap-select/bootstrap-select.min.css')}}" rel="stylesheet">
+    <link href="{{asset('plugins/dropzone/dropzone.min.css')}}" rel="stylesheet">
+
 </head>
 
 <body>
 
-    <div class="main-wrapper">
-
-        <!-- Parte superio de la pagina -->
-        <!-- Header Section Start -->
-        <div class="header-section">
-            <div class="container-fluid">
-                <div class="row justify-content-between align-items-center">
-
-                    <!-- Header Logo (Header Left) Start -->
-                    <div class="header-logo col-auto">
-                        <img src="{{asset('assets/images/logo.jpg')}}" style="height: 80px;width: auto" />
-                        <center>
-                            <h6>Facultad de Administracion de Empresas</h6>
-                        </center>
-                        {{-- <a href="index.html">
-                    <img src="assets/images/Escudo_FICCT.jpg" alt=""  height="50%" width="50%">
-                </a> --}}
-                    </div><!-- Header Logo (Header Left) End -->
-
-                    <!-- Header Right Start -->
-                    <div class="header-right flex-grow-1 col-auto">
-                        <div class="row justify-content-between align-items-center">
-
-                            <!-- Side Header Toggle & Search Start -->
-                            <div class="col-auto">
-                                <div class="row align-items-center">
-
-                                    <!--Side Header Toggle-->
-                                    <div class="col-auto"><button class="side-header-toggle"><i
-                                                class="zmdi zmdi-menu"></i></button></div>
-
-                                    <!--Header Search-->
-                                    <div class="col-auto">
-
-                                        <div class="header-search">
-
-                                            <button class="header-search-open d-block d-xl-none"><i
-                                                    class="zmdi zmdi-search"></i></button>
-
-                                            <div class="header-search-form">
-                                                <form action="#">
-                                                    <input type="text" placeholder="Search Here">
-                                                    <button><i class="zmdi zmdi-search"></i></button>
-                                                </form>
-                                                <button class="header-search-close d-block d-xl-none"><i
-                                                        class="zmdi zmdi-close"></i></button>
+        <div id="container" class="effect aside-float aside-bright mainnav-lg">
+        
+                <!--NAVBAR-->
+                <!--===================================================-->
+                <header id="navbar">
+                    <div id="navbar-container" class="boxed">
+        
+                        <!--Brand logo & name-->
+                        <!--================================-->
+                        <div class="navbar-header">
+                            <a href="index.html" class="navbar-brand">
+                                <img src="{{asset('img/logo.png')}}" alt="Nifty Logo" class="brand-icon">
+                                <div class="brand-title">
+                                    <span class="brand-text">Taller</span>
+                                </div>
+                            </a>
+                        </div>
+                        <!--================================-->
+                        <!--End brand logo & name-->
+        
+        
+                        <!--Navbar Dropdown-->
+                        <!--================================-->
+                        <div class="navbar-content">
+                            <ul class="nav navbar-top-links">
+        
+                                <!--Navigation toogle button-->
+                                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                <li class="tgl-menu-btn">
+                                    <a class="mainnav-toggle" href="#">
+                                        <i class="demo-pli-list-view"></i>
+                                    </a>
+                                </li>
+                                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                <!--End Navigation toogle button-->
+        
+        
+        
+                                <!--Search-->
+                                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                <li>
+                                    <div class="custom-search-form">
+                                        <label class="btn btn-trans" for="search-input" data-toggle="collapse" data-target="#nav-searchbox">
+                                            <i class="demo-pli-magnifi-glass"></i>
+                                        </label>
+                                        <form>
+                                            <div class="search-container collapse" id="nav-searchbox">
+                                                <input id="search-input" type="text" class="form-control" placeholder="Type for search...">
                                             </div>
-
+                                        </form>
+                                    </div>
+                                </li>
+                                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                <!--End Search-->
+        
+                            </ul>
+                            <ul class="nav navbar-top-links">
+        
+        
+                                <!--Mega dropdown-->
+                                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                <li class="mega-dropdown">
+                                    <a href="#" class="mega-dropdown-toggle">
+                                        <i class="demo-pli-layout-grid"></i>
+                                    </a>
+                                    <div class="dropdown-menu mega-dropdown-menu">
+                                        <div class="row">
+                                            <div class="col-sm-4 col-md-3">
+        
+                                                <!--Mega menu list-->
+                                                <ul class="list-unstyled">
+                                                    <li class="dropdown-header"><i class="demo-pli-file icon-lg icon-fw"></i> Pages</li>
+                                                    <li><a href="#">Profile</a></li>
+                                                    <li><a href="#">Search Result</a></li>
+                                                    <li><a href="#">FAQ</a></li>
+                                                    <li><a href="#">Sreen Lock</a></li>
+                                                    <li><a href="#">Maintenance</a></li>
+                                                    <li><a href="#">Invoice</a></li>
+                                                    <li><a href="#" class="disabled">Disabled</a></li>                                        </ul>
+        
+                                            </div>
+                                            <div class="col-sm-4 col-md-3">
+        
+                                                <!--Mega menu list-->
+                                                <ul class="list-unstyled">
+                                                    <li class="dropdown-header"><i class="demo-pli-mail icon-lg icon-fw"></i> Mailbox</li>
+                                                    <li><a href="#"><span class="pull-right label label-danger">Hot</span>Indox</a></li>
+                                                    <li><a href="#">Read Message</a></li>
+                                                    <li><a href="#">Compose</a></li>
+                                                    <li><a href="#">Template</a></li>
+                                                </ul>
+                                                <p class="pad-top text-main text-sm text-uppercase text-bold"><i class="icon-lg demo-pli-calendar-4 icon-fw"></i>News</p>
+                                                <p class="pad-top mar-top bord-top text-sm">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes.</p>
+                                            </div>
+                                            <div class="col-sm-4 col-md-3">
+                                                <!--Mega menu list-->
+                                                <ul class="list-unstyled">
+                                                    <li>
+                                                        <a href="#" class="media mar-btm">
+                                                            <span class="badge badge-success pull-right">90%</span>
+                                                            <div class="media-left">
+                                                                <i class="demo-pli-data-settings icon-2x"></i>
+                                                            </div>
+                                                            <div class="media-body">
+                                                                <p class="text-semibold text-main mar-no">Data Backup</p>
+                                                                <small class="text-muted">This is the item description</small>
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="media mar-btm">
+                                                            <div class="media-left">
+                                                                <i class="demo-pli-support icon-2x"></i>
+                                                            </div>
+                                                            <div class="media-body">
+                                                                <p class="text-semibold text-main mar-no">Support</p>
+                                                                <small class="text-muted">This is the item description</small>
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="media mar-btm">
+                                                            <div class="media-left">
+                                                                <i class="demo-pli-computer-secure icon-2x"></i>
+                                                            </div>
+                                                            <div class="media-body">
+                                                                <p class="text-semibold text-main mar-no">Security</p>
+                                                                <small class="text-muted">This is the item description</small>
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="media mar-btm">
+                                                            <div class="media-left">
+                                                                <i class="demo-pli-map-2 icon-2x"></i>
+                                                            </div>
+                                                            <div class="media-body">
+                                                                <p class="text-semibold text-main mar-no">Location</p>
+                                                                <small class="text-muted">This is the item description</small>
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-sm-12 col-md-3">
+                                                <p class="dropdown-header"><i class="demo-pli-file-jpg icon-lg icon-fw"></i> Gallery</p>
+                                                <div class="row img-gallery">
+                                                    <div class="col-xs-4">
+                                                        <img class="img-responsive" src="{{asset('img/thumbs/img-1.jpg')}}" alt="thumbs">
+                                                    </div>
+                                                    <div class="col-xs-4">
+                                                        <img class="img-responsive" src="{{asset('img/thumbs/img-3.jpg')}}" alt="thumbs">
+                                                    </div>
+                                                    <div class="col-xs-4">
+                                                        <img class="img-responsive" src="{{asset('img/thumbs/img-2.jpg')}}" alt="thumbs">
+                                                    </div>
+                                                    <div class="col-xs-4">
+                                                        <img class="img-responsive" src="{{asset('img/thumbs/img-4.jpg')}}" alt="thumbs">
+                                                    </div>
+                                                    <div class="col-xs-4">
+                                                        <img class="img-responsive" src="{{asset('img/thumbs/img-6.jpg')}}" alt="thumbs">
+                                                    </div>
+                                                    <div class="col-xs-4">
+                                                        <img class="img-responsive" src="{{asset('img/thumbs/img-5.jpg')}}" alt="thumbs">
+                                                    </div>
+                                                </div>
+                                                <a href="#" class="btn btn-block btn-primary">Browse Gallery</a>
+                                            </div>
                                         </div>
                                     </div>
-
-                                </div>
-                            </div><!-- Side Header Toggle & Search End -->
-
-                            <!-- Header Notifications Area Start -->
-                            <div class="col-auto">
-
-                                <ul class="header-notification-area">
-
-                                    <!--Language-->
-                                    <li class="adomx-dropdown position-relative col-auto">
-                                        <a class="toggle" href="#"><img class="lang-flag"
-                                                src="assets/images/flags/flag-1.jpg" alt=""><i
-                                                class="zmdi zmdi-caret-down drop-arrow"></i></a>
-
-                                        <!-- Dropdown -->
-                                        <ul class="adomx-dropdown-menu dropdown-menu-language">
-                                            <li><a href="#"><img src="assets/images/flags/flag-1.jpg" alt="">
-                                                    English</a></li>
-                                            <li><a href="#"><img src="assets/images/flags/flag-2.jpg" alt="">
-                                                    Japanese</a></li>
-                                            <li><a href="#"><img src="assets/images/flags/flag-3.jpg" alt=""> Spanish
-                                                </a></li>
-                                            <li><a href="#"><img src="assets/images/flags/flag-4.jpg" alt="">
-                                                    Germany</a></li>
+                                </li>
+                                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                <!--End mega dropdown-->
+        
+        
+        
+                                <!--Notification dropdown-->
+                                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                <li class="dropdown">
+                                    <a href="#" data-toggle="dropdown" class="dropdown-toggle">
+                                        <i class="demo-pli-bell"></i>
+                                        <span class="badge badge-header badge-danger"></span>
+                                    </a>
+        
+        
+                                    <!--Notification dropdown menu-->
+                                    <div class="dropdown-menu dropdown-menu-md dropdown-menu-right">
+                                        <div class="nano scrollable">
+                                            <div class="nano-content">
+                                                <ul class="head-list">
+                                                    <li>
+                                                        <a href="#" class="media add-tooltip" data-title="Used space : 95%" data-container="body" data-placement="bottom">
+                                                            <div class="media-left">
+                                                                <i class="demo-pli-data-settings icon-2x text-main"></i>
+                                                            </div>
+                                                            <div class="media-body">
+                                                                <p class="text-nowrap text-main text-semibold">HDD is full</p>
+                                                                <div class="progress progress-sm mar-no">
+                                                                    <div style="width: 95%;" class="progress-bar progress-bar-danger">
+                                                                        <span class="sr-only">95% Complete</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="media" href="#">
+                                                            <div class="media-left">
+                                                                <i class="demo-pli-file-edit icon-2x"></i>
+                                                            </div>
+                                                            <div class="media-body">
+                                                                <p class="mar-no text-nowrap text-main text-semibold">Write a news article</p>
+                                                                <small>Last Update 8 hours ago</small>
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="media" href="#">
+                                                            <span class="label label-info pull-right">New</span>
+                                                            <div class="media-left">
+                                                                <i class="demo-pli-speech-bubble-7 icon-2x"></i>
+                                                            </div>
+                                                            <div class="media-body">
+                                                                <p class="mar-no text-nowrap text-main text-semibold">Comment Sorting</p>
+                                                                <small>Last Update 8 hours ago</small>
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="media" href="#">
+                                                            <div class="media-left">
+                                                                <i class="demo-pli-add-user-star icon-2x"></i>
+                                                            </div>
+                                                            <div class="media-body">
+                                                                <p class="mar-no text-nowrap text-main text-semibold">New User Registered</p>
+                                                                <small>4 minutes ago</small>
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="media" href="#">
+                                                            <div class="media-left">
+                                                                <img class="img-circle img-sm" alt="Profile Picture" src="{{asset('img/profile-photos/9.png')}}">
+                                                            </div>
+                                                            <div class="media-body">
+                                                                <p class="mar-no text-nowrap text-main text-semibold">Lucy sent you a message</p>
+                                                                <small>30 minutes ago</small>
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="media" href="#">
+                                                            <div class="media-left">
+                                                                <img class="img-circle img-sm" alt="Profile Picture" src="{{asset('img/profile-photos/3.png')}}">
+                                                            </div>
+                                                            <div class="media-body">
+                                                                <p class="mar-no text-nowrap text-main text-semibold">Jackson sent you a message</p>
+                                                                <small>40 minutes ago</small>
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+        
+                                        <!--Dropdown footer-->
+                                        <div class="pad-all bord-top">
+                                            <a href="#" class="btn-link text-main box-block">
+                                                <i class="pci-chevron chevron-right pull-right"></i>Show All Notifications
+                                            </a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                <!--End notifications dropdown-->
+        
+        
+        
+                                <!--User dropdown-->
+                                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                <li id="dropdown-user" class="dropdown">
+                                    <a href="#" data-toggle="dropdown" class="dropdown-toggle text-right">
+                                        <span class="ic-user pull-right">
+                                            <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                            <!--You can use an image instead of an icon.-->
+                                            <!--<img class="img-circle img-user media-object" src="img/profile-photos/1.png" alt="Profile Picture">-->
+                                            <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                            <i class="demo-pli-male"></i>
+                                        </span>
+                                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                        <!--You can also display a user name in the navbar.-->
+                                        <!--<div class="username hidden-xs">Aaron Chavez</div>-->
+                                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                    </a>
+        
+        
+                                    <div class="dropdown-menu dropdown-menu-sm dropdown-menu-right panel-default">
+                                        <ul class="head-list">
+                                            <li>
+                                                <a href="#"><i class="demo-pli-male icon-lg icon-fw"></i> Profile</a>
+                                            </li>
+                                            <li>
+                                                <a href="#"><span class="badge badge-danger pull-right">9</span><i class="demo-pli-mail icon-lg icon-fw"></i> Messages</a>
+                                            </li>
+                                            <li>
+                                                <a href="#"><span class="label label-success pull-right">New</span><i class="demo-pli-gear icon-lg icon-fw"></i> Settings</a>
+                                            </li>
+                                            <li>
+                                                <a href="#"><i class="demo-pli-computer-secure icon-lg icon-fw"></i> Lock screen</a>
+                                            </li>
+                                            <li>
+                                                <a href="pages-login.html"><i class="demo-pli-unlock icon-lg icon-fw"></i> Logout</a>
+                                            </li>
                                         </ul>
-
-                                    </li>
-
-                                    <!--Mail-->
-                                    <li class="adomx-dropdown col-auto">
-                                        <a class="toggle" href="#"><i class="zmdi zmdi-email-open"></i><span
-                                                class="badge"></span></a>
-
-                                        <!-- Dropdown -->
-                                        <div class="adomx-dropdown-menu dropdown-menu-mail">
-                                            <div class="head">
-                                                <h4 class="title">You have 3 new mail.</h4>
-                                            </div>
-                                            <div class="body custom-scroll">
-                                                <ul>
-                                                    <li>
-                                                        <a href="#">
-                                                            <div class="image"><img
-                                                                    src="assets/images/avatar/avatar-2.jpg" alt="">
-                                                            </div>
-                                                            <div class="content">
-                                                                <h6>Sub: New Account</h6>
-                                                                <p>There are many variations of passages of Lorem Ipsum
-                                                                    available. </p>
-                                                            </div>
-                                                            <span class="reply"><i
-                                                                    class="zmdi zmdi-mail-reply"></i></span>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">
-                                                            <div class="image"><img
-                                                                    src="assets/images/avatar/avatar-1.jpg" alt="">
-                                                            </div>
-                                                            <div class="content">
-                                                                <h6>Sub: Mail Support</h6>
-                                                                <p>There are many variations of passages of Lorem Ipsum
-                                                                    available. </p>
-                                                            </div>
-                                                            <span class="reply"><i
-                                                                    class="zmdi zmdi-mail-reply"></i></span>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">
-                                                            <div class="image"><img
-                                                                    src="assets/images/avatar/avatar-2.jpg" alt="">
-                                                            </div>
-                                                            <div class="content">
-                                                                <h6>Sub: Product inquiry</h6>
-                                                                <p>There are many variations of passages of Lorem Ipsum
-                                                                    available. </p>
-                                                            </div>
-                                                            <span class="reply"><i
-                                                                    class="zmdi zmdi-mail-reply"></i></span>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">
-                                                            <div class="image"><img
-                                                                    src="assets/images/avatar/avatar-1.jpg" alt="">
-                                                            </div>
-                                                            <div class="content">
-                                                                <h6>Sub: Mail Support</h6>
-                                                                <p>There are many variations of passages of Lorem Ipsum
-                                                                    available. </p>
-                                                            </div>
-                                                            <span class="reply"><i
-                                                                    class="zmdi zmdi-mail-reply"></i></span>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-
-                                    </li>
-
-                                    <!--Notification-->
-                                    <li class="adomx-dropdown col-auto">
-                                        <a class="toggle" href="#"><i class="zmdi zmdi-notifications"></i><span
-                                                class="badge"></span></a>
-
-                                        <!-- Dropdown -->
-                                        <div class="adomx-dropdown-menu dropdown-menu-notifications">
-                                            <div class="head">
-                                                <h5 class="title">You have 4 new notification.</h5>
-                                            </div>
-                                            <div class="body custom-scroll">
-                                                <ul>
-                                                    <li>
-                                                        <a href="#">
-                                                            <i class="zmdi zmdi-notifications-none"></i>
-                                                            <p>There are many variations of pages available.</p>
-                                                            <span>11.00 am Today</span>
-                                                        </a>
-                                                        <button class="delete"><i
-                                                                class="zmdi zmdi-close-circle-o"></i></button>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">
-                                                            <i class="zmdi zmdi-block"></i>
-                                                            <p>There are many variations of pages available.</p>
-                                                            <span>11.00 am Today</span>
-                                                        </a>
-                                                        <button class="delete"><i
-                                                                class="zmdi zmdi-close-circle-o"></i></button>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">
-                                                            <i class="zmdi zmdi-info-outline"></i>
-                                                            <p>There are many variations of pages available.</p>
-                                                            <span>11.00 am Today</span>
-                                                        </a>
-                                                        <button class="delete"><i
-                                                                class="zmdi zmdi-close-circle-o"></i></button>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">
-                                                            <i class="zmdi zmdi-shield-security"></i>
-                                                            <p>There are many variations of pages available.</p>
-                                                            <span>11.00 am Today</span>
-                                                        </a>
-                                                        <button class="delete"><i
-                                                                class="zmdi zmdi-close-circle-o"></i></button>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">
-                                                            <i class="zmdi zmdi-notifications-none"></i>
-                                                            <p>There are many variations of pages available.</p>
-                                                            <span>11.00 am Today</span>
-                                                        </a>
-                                                        <button class="delete"><i
-                                                                class="zmdi zmdi-close-circle-o"></i></button>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">
-                                                            <i class="zmdi zmdi-block"></i>
-                                                            <p>There are many variations of pages available.</p>
-                                                            <span>11.00 am Today</span>
-                                                        </a>
-                                                        <button class="delete"><i
-                                                                class="zmdi zmdi-close-circle-o"></i></button>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">
-                                                            <i class="zmdi zmdi-info-outline"></i>
-                                                            <p>There are many variations of pages available.</p>
-                                                            <span>11.00 am Today</span>
-                                                        </a>
-                                                        <button class="delete"><i
-                                                                class="zmdi zmdi-close-circle-o"></i></button>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">
-                                                            <i class="zmdi zmdi-shield-security"></i>
-                                                            <p>There are many variations of pages available.</p>
-                                                            <span>11.00 am Today</span>
-                                                        </a>
-                                                        <button class="delete"><i
-                                                                class="zmdi zmdi-close-circle-o"></i></button>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div class="footer">
-                                                <a href="#" class="view-all">view all</a>
-                                            </div>
-                                        </div>
-
-                                    </li>
-                                    
-                                    <li class="adomx-dropdown col-auto">
-                                        <a class="toggle" href="#">
-                                            <span class="user">
-                                                <span class="avatar">
-                                                    <img src="{{asset(Auth::User()->foto)}}" alt="">
-                                                    <span class="status"></span>
-                                                </span>
-                                                <span class="name">{{Auth::User()->name}}</span>
-                                            </span>
-                                        </a>
-
-                                        <!-- Dropdown -->
-                                        <div class="adomx-dropdown-menu dropdown-menu-user">
-                                            <div class="head">
-                                                <h5 class="name"><a href="#">{{Auth::User()->name}}
-                                                        {{Auth::User()->apellido}}</a></h5>
-                                                <a class="mail" href="#">{{Auth::User()->email}}</a>
-                                            </div>
-                                            <div class="body">
-                                                <ul>
-                                                    <li><a href="{{route('usuarios.show',Auth::User()->id)}}"><i
-                                                                class="zmdi zmdi-account"></i>Perfil</a></li>
-                                                </ul>
-                                                <ul>
-                                                    <li><a href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                document.getElementById('logout-form').submit();">
-                                                            <i class="zmdi zmdi-lock-open"></i>Cerrar Sesion</a></li>
-                                                    <li>
-                                                        <form id="logout-form" action="{{ route('logout') }}"
-                                                            method="POST" style="display: none;">
-                                                            @csrf
-                                                        </form>
-                                                    </li>
-                                                </ul>
-                                                <ul>
-
-                                                </ul>
-                                            </div>
-                                        </div>
-
-                                    </li>
-
-                                </ul>
-
-                            </div><!-- Header Notifications Area End -->
-
+                                    </div>
+                                </li>
+                                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                <!--End user dropdown-->
+         
+                                
+                                <li>
+                                    <a href="#" class="aside-toggle">
+                                        <i class="demo-pli-dot-vertical"></i>
+                                    </a>
+                                </li>
+                            </ul>
                         </div>
-                    </div><!-- Header Right End -->
-
+                        <!--================================-->
+                        <!--End Navbar Dropdown-->
+        
+                    </div>
+                </header>
+                <!--===================================================-->
+                <!--END NAVBAR-->
+        
+                <div class="boxed">
+        
+                    <!--CONTENT CONTAINER-->
+                    <!--===================================================-->
+                    <div id="content-container">
+                        <div id="page-head">
+                            
+                        <div class="pad-all text-center">
+                            <h3>Bienvenido a la pagina Principal</h3>
+                            <p1>Reserveit el software que lucha contra el desperdicio de alimentos.</p>
+                        </div>
+                            </div>
+        
+                        
+                        <!--Page content-->
+                        <!--===================================================-->
+                        <div id="page-content">
+                            @yield('content')
+                        </div>
+                    </div>
+                    <!--===================================================-->
+                    <!--END CONTENT CONTAINER-->
+        
+        
+                    
+                    <!--ASIDE-->
+                    <!--===================================================-->
+                    <aside id="aside-container">
+                        <div id="aside">
+                            <div class="nano">
+                                <div class="nano-content">
+                                    
+                                    <!--Nav tabs-->
+                                    <!--================================-->
+                                    <ul class="nav nav-tabs nav-justified">
+                                        <li class="active">
+                                            <a href="#demo-asd-tab-1" data-toggle="tab">
+                                                <i class="demo-pli-speech-bubble-7 icon-lg"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#demo-asd-tab-2" data-toggle="tab">
+                                                <i class="demo-pli-information icon-lg icon-fw"></i> Report
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#demo-asd-tab-3" data-toggle="tab">
+                                                <i class="demo-pli-wrench icon-lg icon-fw"></i> Settings
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <!--================================-->
+                                    <!--End nav tabs-->
+        
+        
+        
+                                    <!-- Tabs Content -->
+                                    <!--================================-->
+                                    <div class="tab-content">
+        
+                                        <!--First tab (Contact list)-->
+                                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                        <div class="tab-pane fade in active" id="demo-asd-tab-1">
+                                            <p class="pad-all text-main text-sm text-uppercase text-bold">
+                                                <span class="pull-right badge badge-warning">3</span> Family
+                                            </p>
+        
+                                            <!--Family-->
+                                            <div class="list-group bg-trans">
+                                                <a href="#" class="list-group-item">
+                                                    <div class="media-left pos-rel">
+                                                        <img class="img-circle img-xs" src="{{asset('img/profile-photos/2.png')}}" alt="Profile Picture">
+                                                        <i class="badge badge-success badge-stat badge-icon pull-left"></i>
+                                                    </div>
+                                                    <div class="media-body">
+                                                        <p class="mar-no text-main">Stephen Tran</p>
+                                                        <small class="text-muteds">Availabe</small>
+                                                    </div>
+                                                </a>
+                                                <a href="#" class="list-group-item">
+                                                    <div class="media-left pos-rel">
+                                                        <img class="img-circle img-xs" src="{{asset('img/profile-photos/7.png')}}" alt="Profile Picture">
+                                                    </div>
+                                                    <div class="media-body">
+                                                        <p class="mar-no text-main">Brittany Meyer</p>
+                                                        <small class="text-muteds">I think so</small>
+                                                    </div>
+                                                </a>
+                                                <a href="#" class="list-group-item">
+                                                    <div class="media-left pos-rel">
+                                                        <img class="img-circle img-xs" src="{{asset('img/profile-photos/1.png')}}" alt="Profile Picture">
+                                                        <i class="badge badge-info badge-stat badge-icon pull-left"></i>
+                                                    </div>
+                                                    <div class="media-body">
+                                                        <p class="mar-no text-main">Jack George</p>
+                                                        <small class="text-muteds">Last Seen 2 hours ago</small>
+                                                    </div>
+                                                </a>
+                                                <a href="#" class="list-group-item">
+                                                    <div class="media-left pos-rel">
+                                                        <img class="img-circle img-xs" src="{{asset('img/profile-photos/4.png')}}" alt="Profile Picture">
+                                                    </div>
+                                                    <div class="media-body">
+                                                        <p class="mar-no text-main">Donald Brown</p>
+                                                        <small class="text-muteds">Lorem ipsum dolor sit amet.</small>
+                                                    </div>
+                                                </a>
+                                                <a href="#" class="list-group-item">
+                                                    <div class="media-left pos-rel">
+                                                        <img class="img-circle img-xs" src="{{asset('img/profile-photos/8.png')}}" alt="Profile Picture">
+                                                        <i class="badge badge-warning badge-stat badge-icon pull-left"></i>
+                                                    </div>
+                                                    <div class="media-body">
+                                                        <p class="mar-no text-main">Betty Murphy</p>
+                                                        <small class="text-muteds">Idle</small>
+                                                    </div>
+                                                </a>
+                                                <a href="#" class="list-group-item">
+                                                    <div class="media-left pos-rel">
+                                                        <img class="img-circle img-xs" src="{{asset('img/profile-photos/9.png')}}" alt="Profile Picture">
+                                                        <i class="badge badge-danger badge-stat badge-icon pull-left"></i>
+                                                    </div>
+                                                    <div class="media-body">
+                                                        <p class="mar-no text-main">Samantha Reid</p>
+                                                        <small class="text-muteds">Offline</small>
+                                                    </div>
+                                                </a>
+                                            </div>
+        
+                                            <hr>
+                                            <p class="pad-all text-main text-sm text-uppercase text-bold">
+                                                <span class="pull-right badge badge-success">Offline</span> Friends
+                                            </p>
+        
+                                            <!--Works-->
+                                            <div class="list-group bg-trans">
+                                                <a href="#" class="list-group-item">
+                                                    <span class="badge badge-purple badge-icon badge-fw pull-left"></span> Joey K. Greyson
+                                                </a>
+                                                <a href="#" class="list-group-item">
+                                                    <span class="badge badge-info badge-icon badge-fw pull-left"></span> Andrea Branden
+                                                </a>
+                                                <a href="#" class="list-group-item">
+                                                    <span class="badge badge-success badge-icon badge-fw pull-left"></span> Johny Juan
+                                                </a>
+                                                <a href="#" class="list-group-item">
+                                                    <span class="badge badge-danger badge-icon badge-fw pull-left"></span> Susan Sun
+                                                </a>
+                                            </div>
+        
+        
+                                            <hr>
+                                            <p class="pad-all text-main text-sm text-uppercase text-bold">News</p>
+        
+                                            <div class="pad-hor">
+                                                <p>Lorem ipsum dolor sit amet, consectetuer
+                                                    <a data-title="45%" class="add-tooltip text-semibold text-main" href="#">adipiscing elit</a>, sed diam nonummy nibh. Lorem ipsum dolor sit amet.
+                                                </p>
+                                                <small><em>Last Update : Des 12, 2014</em></small>
+                                            </div>
+        
+        
+                                        </div>
+                                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                        <!--End first tab (Contact list)-->
+        
+        
+                                        <!--Second tab (Custom layout)-->
+                                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                        <div class="tab-pane fade" id="demo-asd-tab-2">
+        
+                                            <!--Monthly billing-->
+                                            <div class="pad-all">
+                                                <p class="pad-ver text-main text-sm text-uppercase text-bold">Billing &amp; reports</p>
+                                                <p>Get <strong class="text-main">$5.00</strong> off your next bill by making sure your full payment reaches us before August 5, 2018.</p>
+                                            </div>
+                                            <hr class="new-section-xs">
+                                            <div class="pad-all">
+                                                <span class="pad-ver text-main text-sm text-uppercase text-bold">Amount Due On</span>
+                                                <p class="text-sm">August 17, 2018</p>
+                                                <p class="text-2x text-thin text-main">$83.09</p>
+                                                <button class="btn btn-block btn-success mar-top">Pay Now</button>
+                                            </div>
+        
+        
+                                            <hr>
+        
+                                            <p class="pad-all text-main text-sm text-uppercase text-bold">Additional Actions</p>
+        
+                                            <!--Simple Menu-->
+                                            <div class="list-group bg-trans">
+                                                <a href="#" class="list-group-item"><i class="demo-pli-information icon-lg icon-fw"></i> Service Information</a>
+                                                <a href="#" class="list-group-item"><i class="demo-pli-mine icon-lg icon-fw"></i> Usage Profile</a>
+                                                <a href="#" class="list-group-item"><span class="label label-info pull-right">New</span><i class="demo-pli-credit-card-2 icon-lg icon-fw"></i> Payment Options</a>
+                                                <a href="#" class="list-group-item"><i class="demo-pli-support icon-lg icon-fw"></i> Message Center</a>
+                                            </div>
+        
+        
+                                            <hr>
+        
+                                            <div class="text-center">
+                                                <div><i class="demo-pli-old-telephone icon-3x"></i></div>
+                                                Questions?
+                                                <p class="text-lg text-semibold text-main"> (415) 234-53454 </p>
+                                                <small><em>We are here 24/7</em></small>
+                                            </div>
+                                        </div>
+                                        <!--End second tab (Custom layout)-->
+                                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+        
+        
+                                        <!--Third tab (Settings)-->
+                                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                        <div class="tab-pane fade" id="demo-asd-tab-3">
+                                            <ul class="list-group bg-trans">
+                                                <li class="pad-top list-header">
+                                                    <p class="text-main text-sm text-uppercase text-bold mar-no">Account Settings</p>
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <div class="pull-right">
+                                                        <input class="toggle-switch" id="demo-switch-1" type="checkbox" checked>
+                                                        <label for="demo-switch-1"></label>
+                                                    </div>
+                                                    <p class="mar-no text-main">Show my personal status</p>
+                                                    <small class="text-muted">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</small>
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <div class="pull-right">
+                                                        <input class="toggle-switch" id="demo-switch-2" type="checkbox" checked>
+                                                        <label for="demo-switch-2"></label>
+                                                    </div>
+                                                    <p class="mar-no text-main">Show offline contact</p>
+                                                    <small class="text-muted">Aenean commodo ligula eget dolor. Aenean massa.</small>
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <div class="pull-right">
+                                                        <input class="toggle-switch" id="demo-switch-3" type="checkbox">
+                                                        <label for="demo-switch-3"></label>
+                                                    </div>
+                                                    <p class="mar-no text-main">Invisible mode </p>
+                                                    <small class="text-muted">Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. </small>
+                                                </li>
+                                            </ul>
+        
+        
+                                            <hr>
+        
+                                            <ul class="list-group pad-btm bg-trans">
+                                                <li class="list-header"><p class="text-main text-sm text-uppercase text-bold mar-no">Public Settings</p></li>
+                                                <li class="list-group-item">
+                                                    <div class="pull-right">
+                                                        <input class="toggle-switch" id="demo-switch-4" type="checkbox" checked>
+                                                        <label for="demo-switch-4"></label>
+                                                    </div>
+                                                    Online status
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <div class="pull-right">
+                                                        <input class="toggle-switch" id="demo-switch-5" type="checkbox" checked>
+                                                        <label for="demo-switch-5"></label>
+                                                    </div>
+                                                    Show offline contact
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <div class="pull-right">
+                                                        <input class="toggle-switch" id="demo-switch-6" type="checkbox" checked>
+                                                        <label for="demo-switch-6"></label>
+                                                    </div>
+                                                    Show my device icon
+                                                </li>
+                                            </ul>
+        
+        
+        
+                                            <hr>
+        
+                                            <p class="pad-hor text-main text-sm text-uppercase text-bold mar-no">Task Progress</p>
+                                            <div class="pad-all">
+                                                <p class="text-main">Upgrade Progress</p>
+                                                <div class="progress progress-sm">
+                                                    <div class="progress-bar progress-bar-success" style="width: 15%;"><span class="sr-only">15%</span></div>
+                                                </div>
+                                                <small>15% Completed</small>
+                                            </div>
+                                            <div class="pad-hor">
+                                                <p class="text-main">Database</p>
+                                                <div class="progress progress-sm">
+                                                    <div class="progress-bar progress-bar-danger" style="width: 75%;"><span class="sr-only">75%</span></div>
+                                                </div>
+                                                <small>17/23 Database</small>
+                                            </div>
+        
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </aside>
+                    <nav id="mainnav-container">
+                        <div id="mainnav">
+                            <!--Menu-->
+                            @include('partials.menu')
+                        </div>
+                    </nav>
                 </div>
-            </div>
-        </div><!-- Header Section End -->
-        @include('partials.menu')
-        <!-- Parte del contenido de la pagina-->
-        <div class="content-body">
-            <div class="row mbn-30">
-                @yield('content')
-            </div>
-        </div>
+        
+                
+        
+             
         @include('partials.footer')
-    </div>
+        
+              
+                <button class="scroll-top btn">
+                    <i class="pci-chevron chevron-up"></i>
+                </button>
+            </div>
     @include('partials.script')
+
 </body>
 
 </html>

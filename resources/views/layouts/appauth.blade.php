@@ -2,78 +2,50 @@
 <html>
 
 <head>
-    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-    {{--  <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge"> --}}
-    {{-- <meta name="robots" content="noindex, follow" />
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> --}}
-    <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>Activo Fijo - Adm. Empresas</title>
-    <link rel="stylesheet" href="{{asset('assets/css/vendor/bootstrap.min.css')}}">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <!-- Icon Font CSS -->
-    <link rel="stylesheet" href="{{asset('assets/css/vendor/material-design-iconic-font.min.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/css/vendor/font-awesome.min.css')}}">
-    <link rel="stylesheet" href="{{ asset('assets/css/vendor/themify-icons.css')}}">
-    <link rel="stylesheet" href="{{ asset('assets/css/vendor/cryptocurrency-icons.css')}}">
+    <title>Login | Reserveit</title>
 
-    <!-- Plugins CSS -->
-    <link rel="stylesheet" href="{{ asset('assets/css/plugins/plugins.css')}}">
-
-    <!-- Helper CSS -->
-    <link rel="stylesheet" href="{{ asset('assets/css/helper.css')}}">
-
-    <!-- Main Style CSS -->
-    <link rel="stylesheet" href="{{ asset('assets/css/style.css')}}">
-
-    <!-- Custom Style CSS Only For Demo Purpose -->
-    <link id="cus-style" rel="stylesheet" href="{{asset('assets/css/style-primary.css')}}">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+    <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{asset('css/nifty.min.css')}}" rel="stylesheet">
+    <link href="{{asset('css/demo/nifty-demo-icons.min.css')}}" rel="stylesheet">
+    <link href="{{asset('plugins/pace/pace.min.css')}}" rel="stylesheet">
+    <script src="{{asset('plugins/pace/pace.min.js')}}"></script>
+    <link href="{{asset('css/demo/nifty-demo.min.css')}}" rel="stylesheet">
 </head>
 
 <body>
-    <div class="main-wrapper">
-
-        <!-- Content Body Start -->
-        <div class="content-body m-0 p-0">
-
-            <div class="login-register-wrap">
-                <div class="row">
-
-                    <div class="d-flex align-self-center justify-content-center order-2 order-lg-1 col-lg-5 col-12">
-                        <div class="login-register-form-wrap">
-
-                            <div class="content">
-                                <h4>Facultad de Administracion de Empresas</h4>
-                                <center>
-                                    <p>U.A.G.R.M</p>
-                                </center>
-                                <center> <img src="{{asset('assets/images/logo.jpg')}}"
-                                        style="height: 120px;width: auto" /></center>
-                                <br>
-                            </div>
+    <div id="container" class="cls-container">
+        
+		<div id="bg-overlay"></div>
+		<div class="cls-content">
+		    <div class="cls-content-sm panel">
+		        <div class="panel-body">
                             @yield("content")
-                        </div>
-                    </div>
-
-                    <div class="login-register-bg order-1 order-lg-2 col-lg-7 col-12">
-                        <div class="content">
-                            <h1>UAGRM</h1>
-                            <p>Facultad de Administracion de Empresas</p>
-                        </div>
-                    </div>
-
+                            <div class="demo-bg">
+                                    <div id="demo-bg-list">
+                                        <div class="demo-loading"><i class="psi-repeat-2"></i></div>
+                                        <img class="demo-chg-bg" src="{{asset('img/bg-img/thumbs/bg-img-1.jpg')}}" alt="Background Image">
+                                        <img class="demo-chg-bg" src="{{asset('img/bg-img/thumbs/bg-img-2.jpg')}}" alt="Background Image">
+                                        <img class="demo-chg-bg" src="{{asset('img/bg-img/thumbs/bg-img-3.jpg')}}" alt="Background Image">
+                                        <img class="demo-chg-bg" src="{{asset('img/bg-img/thumbs/bg-img-4.jpg')}}" alt="Background Image">
+                                        <img class="demo-chg-bg" src="{{asset('img/bg-img/thumbs/bg-img-5.jpg')}}" alt="Background Image">
+                                        <img class="demo-chg-bg" src="{{asset('img/bg-img/thumbs/bg-img-6.jpg')}}" alt="Background Image">
+                                    <img class="demo-chg-bg" src="{{asset('img/bg-img/thumbs/bg-img-7.jpg')}}" alt="Background Image">
+                                    </div>
+                            </div>
                 </div>
             </div>
-
-        </div><!-- Content Body End -->
-
+        </div>
     </div>
-    <!-- Global Vendor, plugins & Activation JS -->
-    @include('partials.script')
+    
+    <script src="{{asset('js/jquery.min.js')}}"></script>
+    <script src="{{asset('js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('js/nifty.min.js')}}"></script>
+    <script src="{{asset('js/demo/bg-images.js')}}"></script>
 </body>
 
 </html>

@@ -2,7 +2,10 @@
 @section('title', 'Formulario de Registro')
 
 @section('content')
-<div class="col-lg-12 col-12 mb-20">
+<div class="row">
+        <div class="col-lg-12">
+                <div class="panel">
+
     @if ($errors->any())
     <div class="alert alert-danger">
         <h6>Por favor corrige los errores debajo:</h6>
@@ -14,15 +17,16 @@
     </div>
     @endif
     <h6 class="mb-15">Formulario de Registro</h6>
+    <div class="panel-body">
+
     <form action="{{route('usuarios.store')}}" method="POST" enctype="multipart/form-data" class="smart-form"
-        role="form">
+        role="form" >
         @csrf
         {{ csrf_field() }}
-        <div class="row mbn-15">
             <div class="col-6 mb-15">
                 <label for="name">Nombre de Usuario</label>
                 <input type="text" id="name" name="name" class="form-control"
-                    value="{{ old('name', isset($user) ? $user->name : '') }}">
+                    value="{{ old('name', isset($user) ? $user->name : '') }}" autofocus>
                 @if($errors->has('name'))
                 <em class="invalid-feedback">
                     {{ $errors->first('name') }}
@@ -59,12 +63,18 @@
                 </em>
                 @endif
             </div>
-            <div class="col-6 mb-15"><label>Apellido<input type="text" class="form-control" placeholder="Apellido"
-                        name="apellido" /></label></div>
-            <div class="col-6 mb-15"><label>Direccion<input type="text" class="form-control" placeholder="Direccion"
-                        name="direccion" /></label></div>
-            <div class="col-6 mb-15"><label>Telefono o Celular<input type="text" class="form-control"
-                        placeholder="Telefono o Celular" name="telefono" /></label></div>
+            <div class="col-6 mb-15">
+                <label>Apellido</label>
+                <input type="text" class="form-control" placeholder="Apellido" name="apellido" />
+            </div>
+            <div class="col-6 mb-15">
+                <label>Direccion</label>
+                <input type="text" class="form-control" placeholder="Direccion" name="direccion" />
+            </div>
+            <div class="col-6 mb-15">
+                <label>Telefono o Celular</label>
+                <input type="text" class="form-control" placeholder="Telefono o Celular" name="telefono" />
+            </div>
             <div class="col-6 mb-15">
                 <label for="roles">Roles
                     <span class="btn btn-info btn-sm select-all" style="padding-top: 0%">Select all</span>
@@ -85,16 +95,17 @@
                 </em>
                 @endif
             </div>
-        </div>
         <center>
             <div class="col-6 mb-15"><label>Fotografia<input type="file" class="dropify" name="foto" /></label></div>
         </center>
         <div style="text-align: center; padding-top: 5%">
-            <button type="submit" class="button button-primary button-sm">Registrar Usuario</button>
-            <a class="button button-danger button-sm" href="{{ route('usuarios.index') }}">Cancelar</a>
+            <button type="submit" class="btn btn-primary">Registrar Usuario</button>
+            <a class="btn btn-danger" href="{{ route('usuarios.index') }}">Cancelar</a>
         </div>
     </form>
-
+    </div>
+ </div>
+</div>
 </div>
 
 

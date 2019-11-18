@@ -1,14 +1,17 @@
 @extends('layouts.app')
 @section('title', 'Gestion de Roles')
 
+
 @section('content')
-<div class="col-lg-12 col-12 mb-20">
+
+<div class="panel">
+
     <div class="card">
-        <div class="card-header">
-            Detalle del Estado
-        </div>
-        <div class="card-body">
-            <table class="table table-bordered table-striped">
+            <div class="panel-heading">
+                    <center><h3 class="panel-title">Detalle del cargo : {{ $rol->name }}</h3></center>
+                </div>
+            <div class="panel-body">
+            <table id="demo-dt-basic" class="table table-striped table-bordered" cellspacing="0" width="100%">
                 <tbody>
                     <tr>
                         <th>
@@ -40,10 +43,9 @@
                 </tbody>
             </table>
             <div>
-                <a class="button button-danger button-sm" href="{{ route("roles.index") }}">Cancelar</a>
+                <a class="btn btn-danger" href="{{ route("roles.index") }}">Cancelar</a>
             </div>
         </div>
     </div>
 </div>
-
 @endsection

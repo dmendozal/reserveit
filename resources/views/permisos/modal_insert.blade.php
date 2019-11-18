@@ -14,7 +14,7 @@
                     </div>
             </div>
             <div class="modal-footer">
-                <button class="button button-primary" type="submit">Registrar</button>
+                <button class="btn btn-primary" type="submit">Registrar</button>
             </div>
            </form>
 

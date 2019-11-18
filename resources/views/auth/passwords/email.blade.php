@@ -1,7 +1,9 @@
 @extends('layouts.appauth')
 @section('content')
 
-<div class="card-header">{{ __('Reestablecer Contraseña') }}</div>
+<h1 class="h1"> Reserveit</h1>
+<h1 class="h3">Restablecer Contraseña</h1>
+<p class="pad-btm">Le llegara un correo electronico a su Email </p>
 
 <div class="card-body card-deck">
     @if (session('status'))
@@ -14,10 +16,9 @@
             @csrf
             <div class="row">
                 <div class="form-group row">
-                    <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-                    <div class="col-md-8">
+                    <div class="form-group">
                         <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
-                            name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                            name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="Email" autofocus>
                         @error('email')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -28,11 +29,11 @@
             </div>
             <div class="row">
                 <div class="col-6 mt-10">
-                    <button class="button button-primary btn-block" type="submit">
+                    <button class="btn btn-danger btn-lg btn-block" type="submit">
                         Reestablecer
                     </button>
                 </div>
-                <a class="col-6 mt-10" href="{{ route('login') }}">
+                <a class="btn-link text-bold text-main" href="{{ route('login') }}">
                     <span class="button button-apple btn-block" style="text-align: center">
                         Atras
                     </span>

@@ -27,14 +27,4 @@ Route::group(['middleware' => ['auth']], function () {
     Route::resource('permisos', 'PermisoController');
     Route::resource('roles', 'RolesController');
     Route::resource('usuarios', 'UsersController');
-
-    //MODULO ACTIVOS
-    Route::resource('activo', 'ActivoController');
-    Route::resource('ubicacion', 'UbicacionController');
-    Route::resource('estado', 'EstadoController');
-    Route::resource('bien', 'BienController');
-    Route::resource('asignacion', 'AsignacionController');
-
-    //OTROS
-    Route::resource('empresa', 'EmpresaController');
 });

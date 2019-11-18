@@ -2,13 +2,15 @@
 @section('title', 'Formulario de Edicion')
 
 @section('content')
-<div class="col-lg-12 col-12 mb-20">
+<div class="row">
+        <div class="col-lg-12">
+                <div class="panel">
 
     <h6 class="mb-15">Formulario de Modificacion</h6>
+    <div class="panel-body">
     <form action="{{route('usuarios.update',[$user->id])}}" method="POST" enctype="multipart/form-data">
         {{ csrf_field() }}
         @method('PUT')
-        <div class="row mbn-15">
             <div class="col-6 mb-15">
                 <label for="name">Nombre de Usuario</label>
                 <input type="text" id="name" name="name" class="form-control"
@@ -29,12 +31,19 @@
                 </em>
                 @endif
             </div>
-            <div class="col-6 mb-15"><label>Apellido<input type="text" class="form-control" placeholder="Apellido"
-                        name="apellido" value="{{$user->apellido}}" /></label></div>
-            <div class="col-6 mb-15"><label>Direccion<input type="text" class="form-control" placeholder="Direccion"
-                        name="direccion" value="{{$user->direccion}}" /></label></div>
-            <div class="col-6 mb-15"><label>Telefono o Celular<input type="text" class="form-control"
-                        placeholder="Telefono o Celular" name="telefono" value="{{$user->telefono}}" /></label></div>
+            <div class="col-6 mb-15">
+                <label>Apellido</label>
+                <input type="text" class="form-control" placeholder="Apellido"
+                        name="apellido" value="{{$user->apellido}}" />
+                </div>
+            <div class="col-6 mb-15"><label>Direccion</label>
+                <input type="text" class="form-control" placeholder="Direccion"
+                        name="direccion" value="{{$user->direccion}}" />
+            </div>
+            <div class="col-6 mb-15"><label>Telefono o Celular</label>
+                <input type="text" class="form-control"
+                        placeholder="Telefono o Celular" name="telefono" value="{{$user->telefono}}" />
+            </div>
 
             <div class="col-6 mb-15">
                 <label for="roles">Roles
@@ -56,18 +65,19 @@
                 </em>
                 @endif
             </div>
-        </div>
         <br>
         <center>
             <div class="col-6 mb-15"><label>Fotografia<input data-default-file="{{asset($user->foto)}}" type="file"
                         class="dropify" name="foto" /></label></div>
         </center>
         <div style="text-align: center; padding-top: 5%">
-            <button type="submit" class="button button-primary button-sm">Guardar Cambios</button>
-            <a class="button button-danger button-sm" href="{{ route('usuarios.index') }}">Cancelar</a>
+            <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+            <a class="btn btn-danger" href="{{ route('usuarios.index') }}">Cancelar</a>
         </div>
     </form>
-
+    </div>
+</div>
+        </div>
 </div>
 
 <script>

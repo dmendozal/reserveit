@@ -1,10 +1,21 @@
- <!-- Footer Section Start -->
- <div class="footer-section">
-    <div class="container-fluid">
-
-        <div class="footer-copyright text-center">
-            <p class="text-body-light">2019 &copy; <a href="https://themeforest.net/user/codecarnival">U.A.G.R.M</a></p>
-        </div>
-
-    </div>
-</div><!-- Footer Section End -->
+                <!--===================================================-->
+                <footer id="footer">
+        
+                        <!-- Visible when footer positions are fixed -->
+                        <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                        <div class="show-fixed pad-rgt pull-right">
+                            You have <a href="#" class="text-main"><span class="badge badge-danger">3</span> pending action.</a>
+                        </div>
+            
+            
+            
+                 
+                        <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                        <!-- Remove the class "show-fixed" and "hide-fixed" to make the content always appears. -->
+                        <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            
+                        <p class="pad-lft">&#0169; 2019 Reserveit</p>
+            
+            
+            
+                    </footer>

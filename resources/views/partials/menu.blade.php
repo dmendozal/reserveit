@@ -1,49 +1,108 @@
-<!-- Sidebar de la pagina -->
+<div id="mainnav-menu-wrap">
+        <div class="nano">
+            <div class="nano-content">
 
-<div class="side-header show">
-    <button class="side-header-close"><i class="zmdi zmdi-close"></i></button>
-    <!-- Side Header Inner Start -->
-    <div class="side-header-inner custom-scroll">
+                <!--Profile Widget-->
+                <!--================================-->
+                <div id="mainnav-profile" class="mainnav-profile">
+                    <div class="profile-wrap text-center">
+                        <div class="pad-btm">
+                        <img class="img-circle img-md" src="{{asset(Auth::User()->foto)}}" alt="Profile Picture">
+                        </div>
+                        <a href="#profile-nav" class="box-block" data-toggle="collapse" aria-expanded="false">
+                            <span class="pull-right dropdown-toggle">
+                                <i class="dropdown-caret"></i>
+                            </span>
+                        <p class="mnp-name">{{Auth::User()->name}}</p>
+                            <span class="mnp-desc">{{Auth::User()->email}}</span>
+                        </a>
+                    </div>
+                    <div id="profile-nav" class="collapse list-group bg-trans">
+                        <a href="#" class="list-group-item">
+                            <i class="demo-pli-male icon-lg icon-fw"></i> View Profile
+                        </a>
+                        <a href="#" class="list-group-item">
+                            <i class="demo-pli-gear icon-lg icon-fw"></i> Settings
+                        </a>
+                        <a href="#" class="list-group-item">
+                            <i class="demo-pli-information icon-lg icon-fw"></i> Help
+                        </a>
+                        <a href="#" class="list-group-item">
+                            <i class="demo-pli-unlock icon-lg icon-fw"></i> Logout
+                        </a>
+                    </div>
+                </div>
 
-        <nav class="side-header-menu" id="side-header-menu">
-            <ul>
-                <li><a href="{{ route('home')}}"><i class="ti-home"></i> <span>Dashboard</span></a></li>
 
-                <li><a href="{{ route('empresa.index')}}"><i class="ti-palette"></i> <span>Gestionar Empresas</span></a>
-                </li>
-                <li class="has-sub-menu"><a href="#"><i class="ti-package"></i> <span>Modulo Usuarios</span></a>
-                    <ul class="side-header-sub-menu">
-                        <li><a href="{{route('permisos.index')}}"><span>Gestionar Permisos</span></a></li>
-                        <li><a href="{{route('roles.index')}}"><span>Gestionar Roles</span></a></li>
-                        <li><a href="{{route('usuarios.index')}}"><span>Gestionar Usuarios</span></a></li>
+                <!--Shortcut buttons-->
+                <!--================================-->
+                <div id="mainnav-shortcut" class="hidden">
+                    <ul class="list-unstyled shortcut-wrap">
+                        <li class="col-xs-3" data-content="My Profile">
+                            <a class="shortcut-grid" href="#">
+                                <div class="icon-wrap icon-wrap-sm icon-circle bg-mint">
+                                <i class="demo-pli-male"></i>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="col-xs-3" data-content="Messages">
+                            <a class="shortcut-grid" href="#">
+                                <div class="icon-wrap icon-wrap-sm icon-circle bg-warning">
+                                <i class="demo-pli-speech-bubble-3"></i>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="col-xs-3" data-content="Activity">
+                            <a class="shortcut-grid" href="#">
+                                <div class="icon-wrap icon-wrap-sm icon-circle bg-success">
+                                <i class="demo-pli-thunder"></i>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="col-xs-3" data-content="Lock Screen">
+                            <a class="shortcut-grid" href="#">
+                                <div class="icon-wrap icon-wrap-sm icon-circle bg-purple">
+                                <i class="demo-pli-lock-2"></i>
+                                </div>
+                            </a>
+                        </li>
                     </ul>
-                </li>
-                <li class="has-sub-menu"><a href="#"><i class="ti-package"></i> <span>Modulo Activos</span></a>
-                    <ul class="side-header-sub-menu">
-                        <li><a href="{{route('asignacion.index')}}"><span>Gestionar Asignacion</span></a></li>
-                        <li><a href="{{route('activo.index')}}"><span>Gestionar Activo</span></a></li>
-                        <li><a href="{{route('estado.index')}}"><span>Gestionar Estado</span></a></li>
-                        <li><a href="{{route('ubicacion.index')}}"><span>Gestionar Ubicacion</span></a></li>
-                        <li><a href="{{route('bien.index')}}"><span>Gestionar Bien</span></a></li>
-                    </ul>
-                </li>
+                </div>
+                <!--================================-->
+                <!--End shortcut buttons-->
 
 
-                @role('GestionarUsuario')
+                <ul id="mainnav-menu" class="list-group">
+        
+                    <!--Category name-->
+                    <li class="list-header">Menu </li>
+        
+                    <!--Menu list item-->
+                    <li>
+                        <a href="#">
+                            <i class="demo-pli-split-vertical-2"></i>
+                            <span class="menu-title">Modulo Usuarios</span>
+                            <i class="arrow"></i>
+                        </a>
+        
+                        <!--Submenu-->
+                        <ul class="collapse">
+                        <li><a href="{{route('permisos.index')}}">Gestionar Permisos</a></li>
+                        <li><a href="{{route('roles.index')}}">Gestionar Cargo</a></li>
+                        <li><a href="{{route('usuarios.index')}}">Gestionar Usuario</a></li>
+                        </ul>
+                    </li>
+        
+                    <li class="list-divider"></li>
+        
+                    <!--Category name-->
+                    <li class="list-header">Otros</li>
+        
+                    <li class="list-divider"></li>
+        
+                </ul>
 
-                <li class="has-sub-menu"><a href="#"><i class="ti-stamp"></i> <span>Icons</span></a>
-                    <ul class="side-header-sub-menu">
-                        <li><a href="icons-cryptocurrency.html"><span>Cryptocurrency</span></a></li>
-                        <li><a href="icons-fontawesome.html"><span>Font Awesome</span></a></li>
-                        <li><a href="icons-material.html"><span>Material Icon</span></a></li>
-                        <li><a href="icons-themify.html"><span>Themify Icon</span></a></li>
-                    </ul>
-                </li>
-                @endrole
 
-
-            </ul>
-        </nav>
-
+            </div>
+        </div>
     </div>
-</div>
