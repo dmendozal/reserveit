@@ -3,15 +3,17 @@
 
 @section('content')
 
-<div class="panel">
-    <br>
-        <a href="{{route('usuarios.create')}}" class="btn btn-mint btn-lg"><i class="demo-pli-add icon-lg"></i></a>
-        <div class="panel-heading">
-            <center><h3 class="panel-title">Lista de Usuarios</h3></center>
-        </div>
-        <div class="panel-body">
-            <table id="demo-dt-basic" class="table table-striped table-bordered" cellspacing="0" width="100%">
-                 <thead>
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Lista de Usuarios</h4>
+                <a class="btn waves-effect waves-light btn-sm btn-primary" href="{{route('usuarios.create')}}" type="button" >Registrar Usuario</a>
+                <div class="table-responsive m-t-40">
+                    <table id="example23"
+                        class="display nowrap table table-hover table-striped table-bordered"
+                        cellspacing="0" width="100%">
+                        <thead>
                             <tr>
                                 <th>Nro</th>
                                 <th>Nombre</th>
@@ -22,6 +24,17 @@
                                 <th>Opciones</th>
                             </tr>
                         </thead>
+                        <tfoot>
+                            <tr>
+                                <th>Nro</th>
+                                <th>Nombre</th>
+                                <th>Apellido</th>
+                                <th>Email</th>
+                                <th>Cargo</th>
+                                <th>Fotografia</th>
+                                <th>Opciones</th>
+                            </tr>
+                        </tfoot>
                         <tbody>
                             @foreach ($usuarios as $key =>$user)
                             <tr>
@@ -37,37 +50,22 @@
                                 <td><img src="{{$user->foto}}" height="100px" width="100px" /></td>
 
                                 <td>
-                                    <a class="btn btn-success btn-icon" href="{{ route('usuarios.edit',$user->id)}}" type="button" ><i class="demo-psi-pen-5 icon-lg"></i></a>
+                                    <a class="btn waves-effect waves-light btn-sm btn-success" href="{{ route('usuarios.edit',$user->id)}}" type="button" >Editar</a>
                                     <form action="{{ route('usuarios.destroy', $user->id) }}" method="POST"
                                         onsubmit="return confirm('¿Está seguro?');" style="display: inline-block;">
                                         <input type="hidden" name="_method" value="DELETE">
                                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                        <button class="btn btn-danger btn-icon" type="submit" ><i class="demo-psi-recycling icon-lg"></i></button>
+                                        <button class="btn waves-effect waves-light btn-sm btn-danger" type="submit" >Eliminar</button>
                                     </form>
                                 </td>
                             </tr>
                             @endforeach
                         </tbody>
-                        <tfoot>
-                            <tr>
-                                <th>Nro</th>
-                                <th>Nombre</th>
-                                <th>Apellido</th>
-                                <th>Email</th>
-                                <th>Cargo</th>
-                                <th>Fotografia</th>
-                                <th>Opciones</th>
-                            </tr>
-                        </tfoot>
-            </table>
+                    </table>
+                </div>
+            </div>
         </div>
     </div>
+</div>
 
-
-        <script>
-            function Editar(id, nombre) {
-        document.getElementById('id1').value=id;
-        document.getElementById('nombre1').value=nombre;
-    }
-        </script>
         @endsection

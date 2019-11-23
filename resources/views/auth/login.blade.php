@@ -2,13 +2,12 @@
 @section('content')
 
 <div class="mar-ver pad-btm">
-        <h1 class="h3">Bienvenido a Reserveit</h1>
-        <p>Luchando contra el desperdicio de alimentos</p>
-        <img class="demo-chg-bg" src="img/bg-img/thumbs/bg-img-1.jpg" height="120px" height="120px" alt="Background Image">
+        <h1 class="text-center m-b-20">Bienvenido  Reserveit</h1>
+        <p class="text-center m-b-20">Luchando contra el desperdicio de alimentos</p>
     </div>
 <div class="login-register-form">
      
-    <form method="POST" action="{{ route('login') }}">
+    <form method="POST" action="{{ route('login') }}" class="form-horizontal form-material" id="loginform">
         @csrf
             <div class="form-group"><input class="form-control" type="text" @error('email') is-invalid @enderror"
                     name="email" value="{{ old('email') }}" required autocomplete="email" autofocus
@@ -35,6 +34,7 @@
 
             <div class="col-12 mt-10"><button class="btn btn-info btn-lg btn-block" type="submit">Iniciar
                     sesion</button></div>
+                    <br>
                     @if (Route::has('password.request'))
                     <div class="col-12">
                         <div class="row justify-content-between">

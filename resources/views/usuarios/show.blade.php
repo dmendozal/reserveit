@@ -1,15 +1,15 @@
 @extends('layouts.app')
 @section('title', 'Detalle de Usuario')
 @section('content')
-<div class="col-lg-12 col-12 mb-20">
-    <div class="card">
-        <div class="card-header">
-            Mi Perfil
-            <a class="button button-success button-sm float-right" href="{{route('usuarios.edit',$users->id)}}">Editar
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                    <h4 class="card-title">Perfil :   {{ $users->name }} </h4>
+            <a class="btn btn-success float-right" href="{{route('usuarios.edit',$users->id)}}">Editar
                 Perfil</a>
-        </div>
-        <div class="card-body">
-            <table class="table table-bordered table-striped">
+
+       <table class="table table-bordered table-striped">
                 <tbody>
                     <tr>
                         <th>
@@ -55,9 +55,9 @@
                 </tbody>
             </table>
             <div>
-                <a class="button button-danger button-sm" href="{{ url('/home') }}">Cancelar</a> </div>
+                <a class="btn btn-danger" href="{{ url('/home') }}">Cancelar</a> </div>
+        </div>
+            </div>
         </div>
     </div>
-</div>
-</div>
 @endsection

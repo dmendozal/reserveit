@@ -3,11 +3,10 @@
 
 @section('content')
 <div class="row">
-        <div class="col-lg-12">
-                <div class="panel">
-
-    <h6 class="mb-15">Formulario de Modificacion</h6>
-    <div class="panel-body">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Formulario de Edicion</h4>
     <form action="{{route('usuarios.update',[$user->id])}}" method="POST" enctype="multipart/form-data">
         {{ csrf_field() }}
         @method('PUT')
@@ -75,22 +74,10 @@
             <a class="btn btn-danger" href="{{ route('usuarios.index') }}">Cancelar</a>
         </div>
     </form>
+            </div>
+        </div>
     </div>
 </div>
-        </div>
-</div>
 
-<script>
-    window.addEventListener('load', function() {
-        document.querySelector('input[type="file"]').addEventListener('change', function() {
-            if (this.files && this.files[0]) {
-                var img = document.querySelector('img[id="fotoI"]');  // $('img')[0]
-                img.src = URL.createObjectURL(this.files[0]); // set src to blob url
-                img.onload = imageIsLoaded;
-            }
-        });
-      });
-      
-</script>
 
 @endsection

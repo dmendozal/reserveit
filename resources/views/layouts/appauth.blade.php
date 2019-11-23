@@ -8,44 +8,45 @@
 
     <title>Login | Reserveit</title>
 
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
-    <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
-    <link href="{{asset('css/nifty.min.css')}}" rel="stylesheet">
-    <link href="{{asset('css/demo/nifty-demo-icons.min.css')}}" rel="stylesheet">
-    <link href="{{asset('plugins/pace/pace.min.css')}}" rel="stylesheet">
-    <script src="{{asset('plugins/pace/pace.min.js')}}"></script>
-    <link href="{{asset('css/demo/nifty-demo.min.css')}}" rel="stylesheet">
+    <link href="{{asset('dist/css/pages/login-register-lock.css')}}" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="{{asset('dist/css/style.min.css')}}" rel="stylesheet">
 </head>
 
-<body>
-    <div id="container" class="cls-container">
-        
-		<div id="bg-overlay"></div>
-		<div class="cls-content">
-		    <div class="cls-content-sm panel">
-		        <div class="panel-body">
-                            @yield("content")
-                            <div class="demo-bg">
-                                    <div id="demo-bg-list">
-                                        <div class="demo-loading"><i class="psi-repeat-2"></i></div>
-                                        <img class="demo-chg-bg" src="{{asset('img/bg-img/thumbs/bg-img-1.jpg')}}" alt="Background Image">
-                                        <img class="demo-chg-bg" src="{{asset('img/bg-img/thumbs/bg-img-2.jpg')}}" alt="Background Image">
-                                        <img class="demo-chg-bg" src="{{asset('img/bg-img/thumbs/bg-img-3.jpg')}}" alt="Background Image">
-                                        <img class="demo-chg-bg" src="{{asset('img/bg-img/thumbs/bg-img-4.jpg')}}" alt="Background Image">
-                                        <img class="demo-chg-bg" src="{{asset('img/bg-img/thumbs/bg-img-5.jpg')}}" alt="Background Image">
-                                        <img class="demo-chg-bg" src="{{asset('img/bg-img/thumbs/bg-img-6.jpg')}}" alt="Background Image">
-                                    <img class="demo-chg-bg" src="{{asset('img/bg-img/thumbs/bg-img-7.jpg')}}" alt="Background Image">
-                                    </div>
-                            </div>
+<body class="skin-default card-no-border">
+        <div class="preloader">
+                <div class="loader">
+                    <div class="loader__figure"></div>
+                    <p class="loader__label">Reserveit</p>
                 </div>
             </div>
-        </div>
-    </div>
-    
-    <script src="{{asset('js/jquery.min.js')}}"></script>
-    <script src="{{asset('js/bootstrap.min.js')}}"></script>
-    <script src="{{asset('js/nifty.min.js')}}"></script>
-    <script src="{{asset('js/demo/bg-images.js')}}"></script>
+            <section id="wrapper">
+                    <div class="login-register" style="background-image:url(../assets/images/background/image.jpg);">
+                        <div class="login-box card">
+                            <div class="card-body">
+                                @yield('content')
+                            </div>
+                        </div>
+                    </div>
+            </section>
+    <script src="{{asset('assets/node_modules/jquery/jquery-3.2.1.min.js')}}"></script>
+    <script src="{{asset('assets/node_modules/popper/popper.min.js')}}"></script>
+    <script src="{{asset('assets/node_modules/bootstrap/dist/js/bootstrap.min.js')}}"></script>
+    <script type="text/javascript">
+        $(function() {
+            $(".preloader").fadeOut();
+        });
+        $(function() {
+            $('[data-toggle="tooltip"]').tooltip()
+        });
+        // ============================================================== 
+        // Login and Recover Password 
+        // ============================================================== 
+        $('#to-recover').on("click", function() {
+            $("#loginform").slideUp();
+            $("#recoverform").fadeIn();
+        });
+    </script>
 </body>
 
 </html>

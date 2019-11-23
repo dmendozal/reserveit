@@ -2,14 +2,14 @@
 @section('title', 'Gestion de Roles')
 
 @section('content')
+
+
 <div class="row">
-        <div class="col-lg-12">
-            <div class="panel">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Registro de Nuevo Cargo</h3>
-                </div>
-                <div class="panel-body">
-            <form action="{{route('roles.update',$role->id)}}" method="POST">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Formulario de Edicion</h4>
+             <form action="{{route('roles.update',$role->id)}}" method="POST">
                 @csrf
                 @method('PUT')
                 <div class="form-group" style="padding-bottom: 1%">
@@ -41,12 +41,10 @@
                     <a class="btn btn-danger" href="{{ route('roles.index') }}">Cancelar</a>
                 </div>
             </form>
+            </div>
         </div>
     </div>
 </div>
-
-</div>
-
 
 
 @endsection

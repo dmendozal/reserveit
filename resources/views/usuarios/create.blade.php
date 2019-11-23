@@ -2,24 +2,25 @@
 @section('title', 'Formulario de Registro')
 
 @section('content')
+
+
 <div class="row">
-        <div class="col-lg-12">
-                <div class="panel">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Formulario de Registro</h4>
 
-    @if ($errors->any())
-    <div class="alert alert-danger">
-        <h6>Por favor corrige los errores debajo:</h6>
-        <ul>
-            @foreach ($errors->all() as $error)
-            <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-    @endif
-    <h6 class="mb-15">Formulario de Registro</h6>
-    <div class="panel-body">
-
-    <form action="{{route('usuarios.store')}}" method="POST" enctype="multipart/form-data" class="smart-form"
+                    @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <h6>Por favor corrige los errores debajo:</h6>
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                    @endif
+                    <form action="{{route('usuarios.store')}}" method="POST" enctype="multipart/form-data" class="smart-form"
         role="form" >
         @csrf
         {{ csrf_field() }}
@@ -103,9 +104,10 @@
             <a class="btn btn-danger" href="{{ route('usuarios.index') }}">Cancelar</a>
         </div>
     </form>
+
+            </div>
+        </div>
     </div>
- </div>
-</div>
 </div>
 
 
