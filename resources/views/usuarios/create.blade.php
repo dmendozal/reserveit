@@ -1,15 +1,11 @@
 @extends('layouts.app')
 @section('title', 'Formulario de Registro')
-
 @section('content')
-
-
 <div class="row">
     <div class="col-12">
         <div class="card">
             <div class="card-body">
                 <h4 class="card-title">Formulario de Registro</h4>
-
                     @if ($errors->any())
                     <div class="alert alert-danger">
                         <h6>Por favor corrige los errores debajo:</h6>

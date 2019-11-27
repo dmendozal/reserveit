@@ -2,7 +2,7 @@
 @section('content')
 
 <div class="mar-ver pad-btm">
-        <h1 class="text-center m-b-20">Bienvenido  Reserveit</h1>
+        <h1 class="text-center m-b-20">Bienvenido  ReserveIt</h1>
         <p class="text-center m-b-20">Luchando contra el desperdicio de alimentos</p>
     </div>
 <div class="login-register-form">

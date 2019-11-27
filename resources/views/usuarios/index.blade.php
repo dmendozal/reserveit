@@ -8,10 +8,10 @@
         <div class="card">
             <div class="card-body">
                 <h4 class="card-title">Lista de Usuarios</h4>
-                <a class="btn waves-effect waves-light btn-sm btn-primary" href="{{route('usuarios.create')}}" type="button" >Registrar Usuario</a>
+                <a class="btn waves-effect waves-light btn-sm btn-primary" href="{{route('usuarios.create')}}"
+                    type="button">Registrar Usuario</a>
                 <div class="table-responsive m-t-40">
-                    <table id="example23"
-                        class="display nowrap table table-hover table-striped table-bordered"
+                    <table id="example23" class="display nowrap table table-hover table-striped table-bordered"
                         cellspacing="0" width="100%">
                         <thead>
                             <tr>
@@ -47,15 +47,17 @@
                                     <span class="badge badge-info">{{ $rol->name }}</span>
                                     @endforeach
                                 </td>
-                                <td><img src="{{$user->foto}}" height="100px" width="100px" /></td>
+                                <td>{{-- <img src="{{  }}$user->foto}}" height="100px" width="100px" /> --}}</td>
 
                                 <td>
-                                    <a class="btn waves-effect waves-light btn-sm btn-success" href="{{ route('usuarios.edit',$user->id)}}" type="button" >Editar</a>
+                                    <a class="btn waves-effect waves-light btn-sm btn-success"
+                                        href="{{ route('usuarios.edit',$user->id)}}" type="button">Editar</a>
                                     <form action="{{ route('usuarios.destroy', $user->id) }}" method="POST"
                                         onsubmit="return confirm('¿Está seguro?');" style="display: inline-block;">
                                         <input type="hidden" name="_method" value="DELETE">
                                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                        <button class="btn waves-effect waves-light btn-sm btn-danger" type="submit" >Eliminar</button>
+                                        <button class="btn waves-effect waves-light btn-sm btn-danger"
+                                            type="submit">Eliminar</button>
                                     </form>
                                 </td>
                             </tr>
@@ -68,4 +70,4 @@
     </div>
 </div>
 
-        @endsection
+@endsection

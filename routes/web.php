@@ -11,17 +11,18 @@
 |
 */
 
-
 Route::get('/', function () {
     return view('auth.login');
 });
 
+Route::redirect('/', '/login');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['middleware' => ['auth']], function () {
+
+    Route::get('/home', 'HomeController@index')->name('home');
 
     //MODULO USUARIOS
     Route::resource('permisos', 'PermisoController');
