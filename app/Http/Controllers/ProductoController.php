@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Producto;
 class ProductoController extends Controller
 {
     /**
@@ -80,5 +80,11 @@ class ProductoController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function allProducts(){
+        
+        $result =Producto::all();
+        return $result;
     }
 }

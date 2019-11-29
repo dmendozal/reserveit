@@ -29,3 +29,6 @@ Route::group(['middleware' => ['auth']], function () {
     Route::resource('roles', 'RolesController');
     Route::resource('usuarios', 'UsersController');
 });
+
+Route::get('productos','ProductoController@allProducts');
+
