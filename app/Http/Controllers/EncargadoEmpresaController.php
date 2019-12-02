@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\EncargadoEmpresa;
 use Illuminate\Http\Request;
 
 class EncargadoEmpresaController extends Controller
@@ -13,7 +14,8 @@ class EncargadoEmpresaController extends Controller
      */
     public function index()
     {
-        //
+        $encargadoEmpresa = EncargadoEmpresa::all()->where('estado', '1');
+        return view('encargadoEmpresa.index', compact('encargadoEmpresa'));
     }
 
     /**

@@ -28,7 +28,12 @@ Route::group(['middleware' => ['auth']], function () {
     Route::resource('permisos', 'PermisoController');
     Route::resource('roles', 'RolesController');
     Route::resource('usuarios', 'UsersController');
+
+
+    //MODULO EMPRESA
+    Route::resource('empresa', 'EmpresaController');
+    Route::resource('encargadoempresa', 'EncargadoEmpresaController');
+    Route::resource('encargadosucursal', 'EncargadoSucursalController');
 });
 
-Route::get('productos','ProductoController@allProducts');
-
+Route::get('productos', 'ProductoController@allProducts');

@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Spatie\Permission\Models\Role;
 use App\Rol;
 use App\Permiso;
 
@@ -44,9 +43,7 @@ class RolesController extends Controller
         $rol->created_at = now();
         $rol->updated_at = now();
         $rol->save();
-        $rol->permisos()->sync($request->permisos);
-        /* $role = Role::create(['name' => $request->input('nombre')]);
-        $role->syncPermissions($request->input('permisos')); */
+        $rol->permisos()->sync($request->permissions);
         return redirect()->action('RolesController@index');
     }
 

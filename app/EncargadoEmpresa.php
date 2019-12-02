@@ -13,6 +13,7 @@ class EncargadoEmpresa extends Model
         'nombre',
         'apellido',
         'ci',
+        'email',
         'telefono',
         'validacion',
         'fecha_registro',

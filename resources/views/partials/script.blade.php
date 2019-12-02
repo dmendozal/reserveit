@@ -33,7 +33,8 @@
 
 <script src="{{asset('assets/node_modules/switchery/dist/switchery.min.js')}}"></script>
 <script src="{{asset('assets/node_modules/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js')}}"></script>
-<script src="{{asset('assets/node_modules/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.js')}}" type="text/javascript"></script>
+<script src="{{asset('assets/node_modules/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.js')}}"
+    type="text/javascript"></script>
 <script src="{{asset('assets/node_modules/dff/dff.js')}}" type="text/javascript"></script>
 
 
@@ -80,7 +81,7 @@
             }
         })
     });
-    </script>
+</script>
 <script>
     $(function () {
         $('#myTable').DataTable();
@@ -132,8 +133,8 @@
     });
 
 </script>
-    <script>
-        $(function () {
+<script>
+    $(function () {
             // Switchery
             var elems = Array.prototype.slice.call(document.querySelectorAll('.js-switch'));
             $('.js-switch').each(function () {
@@ -182,13 +183,19 @@
                 selectableOptgroup: true
             });
             $('#public-methods').multiSelect();
-            $('#select-all').click(function () {
-                $('#public-methods').multiSelect('select_all');
-                return false;
+            $('.select-all').click(function () {
+                /* $('#public-methods').multiSelect('select_all');
+                return false; */
+                let $select2 = $( this ).parent().siblings( '.select2' )
+                $select2.find( 'option' ).prop( 'selected', 'selected' )
+                $select2.trigger( 'change' )
             });
-            $('#deselect-all').click(function () {
-                $('#public-methods').multiSelect('deselect_all');
-                return false;
+            $('.deselect-all').click(function () {
+                /* $('#public-methods').multiSelect('deselect_all');
+                return false; */
+                let $select2 = $( this ).parent().siblings( '.select2' )
+                $select2.find( 'option' ).prop( 'selected', '' )
+                $select2.trigger( 'change' )
             });
             $('#refresh').on('click', function () {
                 $('#public-methods').multiSelect('refresh');
@@ -236,6 +243,4 @@
                 //templateSelection: formatRepoSelection // omitted for brevity, see the source of this page
             });
         });
-    </script>
-
-
+</script>

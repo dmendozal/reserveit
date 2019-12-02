@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Producto;
+
 class ProductoController extends Controller
 {
     /**
@@ -82,9 +83,10 @@ class ProductoController extends Controller
         //
     }
 
-    public function allProducts(){
-        
-        $result =Producto::all();
+    public function allProducts()
+    {
+
+        $result = Producto::all();
         return $result;
     }
 }

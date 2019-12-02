@@ -20,15 +20,11 @@ class Empresa extends Model
         'imagen',
         'sitio_web',
         'estado',
-        'fkidhorario',
         'fkidencargado_empresa'
     ];
     protected $primaryKey = 'idempresa';
 
-    public function horario()
-    {
-        return $this->belongsTo(Horario::class, 'fkidhorario');
-    }
+
     public function encargadoEmpresa()
     {
         return $this->belongsTo(EncargadoEmpresa::class, 'fkidencargado_empresa');

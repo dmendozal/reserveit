@@ -33,80 +33,115 @@
         <!-- Sidebar navigation-->
         <nav class="sidebar-nav">
             <ul id="sidebarnav">
-                <li class="nav-small-cap">--- PERSONAL</li>
-
                 <li>
+                    @can('modulo_usuario.acceso')
                     <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
                         <i class="ti-layout-grid2"></i>
                         <span class="hide-menu">Modulo Usuario</span>
                     </a>
                     <ul aria-expanded="false" class="collapse">
+                        @can('permisos.acceso')
                         <li>
-                            <a href="{{route('permisos.index')}}">Gestionar Permisos</a>
+                            <a href="{{ route('permisos.index')}}">Gestionar Permisos</a>
                         </li>
+                        @endcan
+                        @can('roles.acceso')
                         <li>
-                            <a href="{{route('roles.index')}}">Gestionar roles</a>
+                            <a href="{{ route('roles.index')}}">Gestionar Roles</a>
                         </li>
+                        @endcan
+                        @can('usuario.acceso')
                         <li>
-                            <a href="{{route('usuarios.index')}}">Gestionar Usuario</a>
+                            <a href="{{ route('usuarios.index')}}">Gestionar Usuario</a>
                         </li>
+                        @endcan
                     </ul>
+                    @endcan
+                    @can('modulo_empresa.acceso')
                     <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
                         <i class="ti-layout-grid2"></i>
                         <span class="hide-menu">Modulo Empresa</span>
                     </a>
                     <ul aria-expanded="false" class="collapse">
+                        @can('empresa.acceso')
                         <li>
-                            <a href="{{ route('permisos.index')}}">Gestionar Empresa</a>
+                            <a href="{{ route('empresa.index')}}">Gestionar Empresa</a>
                         </li>
+                        @endcan
+                        @can('encargado_empresa.acceso')
                         <li>
-                            <a href="{{ route('roles.index')}}">Gestionar Encargado de Empresa</a>
+                            <a href="{{ route('encargadoempresa.index') }}">Gestionar Encargado de Empresa</a>
                         </li>
+                        @endcan
+                        @can('sucursal.acceso')
                         <li>
-                            <a href="{{ route('usuarios.index')}}">Gestionar Sucursal</a>
+                            <a href="#">Gestionar Sucursal</a>
                         </li>
+                        @endcan
+                        @can('horario.acceso')
                         <li>
-                            <a href="{{ route('usuarios.index')}}">Gestionar Horario de Atencion</a>
+                            <a href="#">Gestionar Horario de Atencion</a>
                         </li>
+                        @endcan
+                        @can('categoria.acceso')
                         <li>
-                            <a href="{{ route('usuarios.index')}}">Gestionar Categoria</a>
+                            <a href="#">Gestionar Categoria</a>
                         </li>
+                        @endcan
                     </ul>
+                    @endcan
+                    @can('modulo_sucursal.acceso')
                     <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
                         <i class="ti-layout-grid2"></i>
                         <span class="hide-menu">Modulo Sucursales</span>
                     </a>
                     <ul aria-expanded="false" class="collapse">
-                        <li><a href="{{ route('permisos.index')}}">Gestionar Producto</a>
-                        </li>
+                        @can('producto.acceso')
                         <li>
-                            <a href="{{ route('roles.index')}}">Gestionar Encargado Sucursal</a>
+                            <a href="#">Gestionar Producto</a>
                         </li>
+                        @endcan
+                        @can('encargado_sucursal.acceso')
                         <li>
-                            <a href="{{ route('usuarios.index')}}">Gestionar Ofertas de Productos</a>
+                            <a href="#">Gestionar Encargado Sucursal</a>
                         </li>
+                        @endcan
+                        @can('oferta_producto.acceso')
                         <li>
-                            <a href="{{ route('usuarios.index')}}">Gestionar Entrega</a>
+                            <a href="#">Gestionar Ofertas de Productos</a>
                         </li>
+                        @endcan
+                        @can('entrega.acceso')
+                        <li>
+                            <a href="#">Gestionar Entrega</a>
+                        </li>
+                        @endcan
                     </ul>
+                    @endcan
+                    @can('modulo_cliente.acceso')
                     <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
                         <i class="ti-layout-grid2"></i>
                         <span class="hide-menu">Modulo Clientes</span>
                     </a>
                     <ul aria-expanded="false" class="collapse">
+                        @can('reserva.acceso')
                         <li>
-                            <a href="{{ route('permisos.index')}}">Gestionar Reserva</a>
+                            <a href="#">Gestionar Reserva</a>
                         </li>
+                        @endcan
+                        @can('suscripcion.acceso')
                         <li>
-                            <a href="{{ route('roles.index')}}">Gestionar Suscripcion</a>
+                            <a href="#">Gestionar Suscripcion</a>
                         </li>
+                        @endcan
+                        @can('cliente.acceso')
                         <li>
-                            <a href="{{ route('usuarios.index')}}">Gestionar Cliente</a>
+                            <a href="#">Gestionar Cliente</a>
                         </li>
+                        @endcan
                     </ul>
+                    @endcan
                 </li>
-
-
             </ul>
         </nav>
         <!-- End Sidebar navigation -->
