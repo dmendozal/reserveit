@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\EncargadoSucursal;
 use Illuminate\Http\Request;
 
 class EncargadoSucursalController extends Controller
@@ -13,7 +14,8 @@ class EncargadoSucursalController extends Controller
      */
     public function index()
     {
-        //
+        $encargadoSucursal = EncargadoSucursal::all()->where('estado', '1');
+        return view('encargadoSucursal.index', compact('encargadoSucursal'));
     }
 
     /**

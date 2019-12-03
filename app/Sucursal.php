@@ -19,7 +19,7 @@ class Sucursal extends Model
         'fkidencargado_empresa',
         'fkidencargado_sucursal'
     ];
-    protected $primaryKey = 'idproducto';
+    protected $primaryKey = 'idsucursal';
 
     public function encargadoEmpresa()
     {
@@ -28,5 +28,9 @@ class Sucursal extends Model
     public function encargadoSucursal()
     {
         return $this->belongsTo(EncargadoSucursal::class, 'fkidencargado_sucursal');
+    }
+    public function sucursalProducto()
+    {
+        return $this->belongsToMany(Producto::class, 'sucursal_producto', 'fkidsucursal', 'fkidproducto');
     }
 }

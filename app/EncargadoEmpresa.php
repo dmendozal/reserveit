@@ -20,4 +20,9 @@ class EncargadoEmpresa extends Model
         'estado'
     ];
     protected $primaryKey = 'idencargado_empresa';
+
+    public function empresa()
+    {
+        return $this->hasMany(Empresa::class, 'fkidencargado_empresa');
+    }
 }

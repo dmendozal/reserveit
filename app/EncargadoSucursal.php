@@ -12,11 +12,12 @@ class EncargadoSucursal extends Model
         'idencargado_sucursal',
         'nombre',
         'apellido',
+        'email',
         'ci',
         'telefono',
         'validacion',
         'fecha_registro',
         'estado'
     ];
-    protected $primaryKey = 'idencargado_empresa';
+    protected $primaryKey = 'idencargado_sucursal';
 }

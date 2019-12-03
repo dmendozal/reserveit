@@ -14,12 +14,18 @@ class Producto extends Model
         'descripcion',
         'imagen',
         'estado',
-        'fkidcategoria'
+        'fkidcategoria',
+        'fkidempresa'
     ];
     protected $primaryKey = 'idproducto';
-    
+
     public function categoria()
     {
         return $this->belongsTo(Categoria::class, 'fkidcategoria');
     }
+    public function empresa()
+    {
+        return $this->belongsTo(Empresa::class, 'fkidempresa');
+    }
+    
 }

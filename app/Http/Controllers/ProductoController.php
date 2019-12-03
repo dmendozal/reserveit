@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Categoria;
 use Illuminate\Http\Request;
 use App\Producto;
+use App\SucursalProducto;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class ProductoController extends Controller
 {
@@ -14,7 +18,9 @@ class ProductoController extends Controller
      */
     public function index()
     {
-        //
+        $idempresa = Auth::user()->encargadoEmpresa->empresa[0]->idempresa;
+        $productos = Producto::all()->where('estado', '1')->where('fkidempresa', $idempresa);
+        return view('producto.index', compact('productos'));
     }
 
     /**
@@ -24,7 +30,8 @@ class ProductoController extends Controller
      */
     public function create()
     {
-        //
+        $categorias = Categoria::all();
+        return view('producto.create', compact('categorias'));
     }
 
     /**
@@ -35,7 +42,9 @@ class ProductoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $producto = Producto::create($request->all());
+
+        return redirect()->route('producto.index');
     }
 
     /**
@@ -85,8 +94,29 @@ class ProductoController extends Controller
 
     public function allProducts()
     {
-
         $result = Producto::all();
+        return $result;
+    }
+
+    public function searchProduct($nombre)
+    {
+        $result = DB::table('producto')
+            ->where('nombre', 'like', $nombre.'%')
+            ->get();
+        return $result;
+    }
+    public function searchCategory($nombre)
+    {
+        $result = DB::table('categoria')
+            ->where('nombre', 'like', $nombre.'%')
+            ->get();
+        return $result;
+    }
+    public function searchSucursal($direccion)
+    {
+        $result = DB::table('sucursal')
+            ->where('direccion', 'like', $direccion.'%')
+            ->get();
         return $result;
     }
 }

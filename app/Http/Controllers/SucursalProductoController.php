@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Categoria;
+use App\Sucursal;
 use Illuminate\Http\Request;
 
-class CategoriaController extends Controller
+class SucursalProductoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,7 @@ class CategoriaController extends Controller
      */
     public function index()
     {
-        $categorias = Categoria::all()->where('estado', '1');
-        return view('categoria.index', compact('categorias'));
+        //
     }
 
     /**
@@ -25,7 +24,7 @@ class CategoriaController extends Controller
      */
     public function create()
     {
-        return view('categoria.create');
+        //
     }
 
     /**
@@ -36,8 +35,9 @@ class CategoriaController extends Controller
      */
     public function store(Request $request)
     {
-        Categoria::create($request->all());
-        return redirect()->route('categoria.index');
+        $sucursal = Sucursal::find($request->fkidsucursal);
+        $sucursal->sucursalProducto()->sync($request->productos);
+        return redirect()->route('sucursal.index');
     }
 
     /**

@@ -75,7 +75,7 @@
                         @endcan
                         @can('sucursal.acceso')
                         <li>
-                            <a href="#">Gestionar Sucursal</a>
+                            <a href="{{ route('sucursal.index') }}">Gestionar Sucursal</a>
                         </li>
                         @endcan
                         @can('horario.acceso')
@@ -85,7 +85,7 @@
                         @endcan
                         @can('categoria.acceso')
                         <li>
-                            <a href="#">Gestionar Categoria</a>
+                            <a href="{{ route('categoria.index') }}">Gestionar Categoria</a>
                         </li>
                         @endcan
                     </ul>
@@ -96,26 +96,26 @@
                         <span class="hide-menu">Modulo Sucursales</span>
                     </a>
                     <ul aria-expanded="false" class="collapse">
-                        @can('producto.acceso')
                         <li>
-                            <a href="#">Gestionar Producto</a>
+                            @can('producto.acceso')
+                            <a href="{{ route('producto.index') }}">Gestionar Producto</a>
+                            @endcan
                         </li>
-                        @endcan
-                        @can('encargado_sucursal.acceso')
                         <li>
-                            <a href="#">Gestionar Encargado Sucursal</a>
+                            @can('encargado_sucursal.acceso')
+                            <a href="{{ route('encargadosucursal.index') }}">Gestionar Encargado Sucursal</a>
+                            @endcan
                         </li>
-                        @endcan
-                        @can('oferta_producto.acceso')
                         <li>
-                            <a href="#">Gestionar Ofertas de Productos</a>
+                            @can('oferta_producto.acceso')
+                            <a href="{{ route('ofertaproducto.index') }}">Gestionar Ofertas de Productos</a>
+                            @endcan
                         </li>
-                        @endcan
-                        @can('entrega.acceso')
                         <li>
+                            @can('entrega.acceso')
                             <a href="#">Gestionar Entrega</a>
+                            @endcan
                         </li>
-                        @endcan
                     </ul>
                     @endcan
                     @can('modulo_cliente.acceso')
@@ -124,21 +124,21 @@
                         <span class="hide-menu">Modulo Clientes</span>
                     </a>
                     <ul aria-expanded="false" class="collapse">
-                        @can('reserva.acceso')
                         <li>
+                            @can('reserva.acceso')
                             <a href="#">Gestionar Reserva</a>
+                            @endcan
                         </li>
-                        @endcan
-                        @can('suscripcion.acceso')
                         <li>
+                            @can('suscripcion.acceso')
                             <a href="#">Gestionar Suscripcion</a>
+                            @endcan
                         </li>
-                        @endcan
-                        @can('cliente.acceso')
                         <li>
+                            @can('cliente.acceso')
                             <a href="#">Gestionar Cliente</a>
+                            @endcan
                         </li>
-                        @endcan
                     </ul>
                     @endcan
                 </li>

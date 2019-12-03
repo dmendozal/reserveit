@@ -17,4 +17,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('productos','ProductoController@allProducts');
+Route::get('productos', 'ProductoController@allProducts');
+Route::get('searchp/{nombre}', 'ProductoController@searchProduct');
+Route::get('searchc/{nombre}', 'ProductoController@searchCategory');
+Route::get('searchs/{direccion}', 'ProductoController@searchSucursal');
