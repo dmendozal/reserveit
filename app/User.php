@@ -68,4 +68,12 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Rol::class, 'model_has_roles', 'model_id', 'role_id');
     }
+    public function encargadoEmpresa()
+    {
+        return $this->belongsTo(EncargadoEmpresa::class, 'fkidencargado_empresa');
+    }
+    public function encargadoSucursal()
+    {
+        return $this->belongsTo(EncargadoSucursal::class, 'fkidencargado_sucursal');
+    }
 }

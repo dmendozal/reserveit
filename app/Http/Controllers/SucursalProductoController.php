@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\EncargadoSucursal;
+use App\Sucursal;
 use Illuminate\Http\Request;
 
-class EncargadoSucursalController extends Controller
+class SucursalProductoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,7 @@ class EncargadoSucursalController extends Controller
      */
     public function index()
     {
-        $encargadoSucursal = EncargadoSucursal::all()->where('estado', '1');
-        return view('encargadoSucursal.index', compact('encargadoSucursal'));
+        //
     }
 
     /**
@@ -36,7 +35,9 @@ class EncargadoSucursalController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $sucursal = Sucursal::find($request->fkidsucursal);
+        $sucursal->sucursalProducto()->sync($request->productos);
+        return redirect()->route('sucursal.index');
     }
 
     /**

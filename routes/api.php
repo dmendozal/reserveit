@@ -17,6 +17,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+<<<<<<< HEAD
 Route::get('productos','ProductoController@allProducts');
 Route::post('reservas','ReservaController@reservas');
 Route::get('categorys','CategoriaController@allCategorys');
@@ -28,3 +29,9 @@ Route::get('todayreservation/{id}','ReservaController@todayreservation');
 Route::get('allreservation/{id}','ReservaController@allreservation');
 Route::post('calificar','EntregaController@valoracion');
 Route::get('searchp/{nombre}', 'ProductoController@searchProduct');
+=======
+Route::get('productos', 'ProductoController@allProducts');
+Route::get('searchp/{nombre}', 'ProductoController@searchProduct');
+Route::get('searchc/{nombre}', 'ProductoController@searchCategory');
+Route::get('searchs/{direccion}', 'ProductoController@searchSucursal');
+>>>>>>> 30253b2e635420d1fa2f066be8cd86528d01630a

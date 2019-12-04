@@ -2,7 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\OfertaProducto;
+use App\Producto;
+use App\Sucursal;
+use App\SucursalProducto;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class OfertaProductoController extends Controller
 {
@@ -13,7 +18,9 @@ class OfertaProductoController extends Controller
      */
     public function index()
     {
-        //
+        //$idsucursal = Auth::user()->encargadoSucursal->sucursal->idsucursal;
+        $ofertaProducto = OfertaProducto::all()->where('estado', '1');
+        return view('ofertaproducto.index', compact('ofertaProducto'));
     }
 
     /**
@@ -23,7 +30,9 @@ class OfertaProductoController extends Controller
      */
     public function create()
     {
-        //
+        $idsucursal = Auth::user()->encargadoSucursal->sucursal[0]->idsucursal;
+        $productos = SucursalProducto::all()->where('fkidsucursal', $idsucursal);
+        return view('ofertaproducto.create', compact('productos'));
     }
 
     /**

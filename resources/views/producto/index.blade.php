@@ -7,45 +7,47 @@
     <div class="col-12">
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title">Lista de Roles</h4>
-                <a class="btn waves-effect waves-light btn-sm btn-primary" href="{{route('roles.create')}}"
-                    type="button">Registrar Rol</a>
+                <h4 class="card-title">Lista de Productos</h4>
+                <a class="btn waves-effect waves-light btn-sm btn-primary" href="{{ route('producto.create')}}"
+                    type="button">Registrar Producto</a>
                 <div class="table-responsive m-t-40">
                     <table id="example23" class="display nowrap table table-hover table-striped table-bordered"
                         cellspacing="0" width="100%">
                         <thead>
                             <tr>
+                                <th>Nro</th>
                                 <th>Nombre</th>
-                                <th>Fecha de Creacion</th>
-                                <th>Permisos</th>
-                                <th>Acciones</th>
+                                <th>Descripcion</th>
+                                <th>Imagen</th>
+                                <th>Categoria</th>
+                                <th>Opciones</th>
                             </tr>
                         </thead>
                         <tfoot>
                             <tr>
+                                <th>Nro</th>
                                 <th>Nombre</th>
-                                <th>Fecha de Creacion</th>
-                                <th>Permisos</th>
-                                <th>Acciones</th>
+                                <th>Descripcion</th>
+                                <th>Imagen</th>
+                                <th>Categoria</th>
+                                <th>Opciones</th>
                             </tr>
                         </tfoot>
                         <tbody>
-                            @foreach ($roles as $role)
+                            @foreach ($productos as $key => $producto)
                             <tr>
-                                <td>{{ $role->name}}</td>
-                                <td>{{ $role->created_at}}</td>
+                                <td>{{ $key+1 }}</td>
+                                <td>{{ $producto->nombre }}</td>
+                                <td>{{ $producto->descripcion }}</td>
+                                <td><img src="{{ $producto->imagen }}" style="width: 10%; height: 10%" alt=""></td>
+                                <td>{{ $producto->categoria->nombre }}</td>
                                 <td>
-                                    @foreach($role->permisos as $key => $permiso)
-                                    <span class="badge badge-info">{{ $permiso->name }}</span>
-                                    @endforeach
-                                </td>
-                                <td>
-                                    <a class="btn btn-info btn-sm" href="{{route('roles.show',$role->id)}}"
-                                        type="button">Detalle</a>
                                     <a class="btn waves-effect waves-light btn-sm btn-success"
-                                        href="{{route('roles.edit',$role->id)}}" type="button">Editar</a>
-
-                                    <form action="{{ route('roles.destroy', $role->id) }}" method="POST"
+                                        href="{{ route('empresa.show',$producto->idproducto)}}"
+                                        type="button">Detalles</a>
+                                    <a class="btn waves-effect waves-light btn-sm btn-success"
+                                        href="{{ route('empresa.edit',$producto->idproducto)}}" type="button">Editar</a>
+                                    <form action="{{ route('empresa.destroy', $producto->idproducto) }}" method="POST"
                                         onsubmit="return confirm('¿Está seguro?');" style="display: inline-block;">
                                         <input type="hidden" name="_method" value="DELETE">
                                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
@@ -62,10 +64,5 @@
         </div>
     </div>
 </div>
-<script>
-    function Editar(id, nombre) {
-        document.getElementById('id1').value=id;
-        document.getElementById('nombre1').value=nombre;
-    }
-</script>
+
 @endsection

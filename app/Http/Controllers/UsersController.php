@@ -47,7 +47,7 @@ class UsersController extends Controller
         $path = public_path() . '/assets/images/avatar';
         $fileName = uniqid() . $file->getClientOriginalName();
         $file->move($path, $fileName);
-        $user = User::create(['name' => $request->username, 'email' => $request->email, 'password' => Hash::make($request->input('password')), 'email_verified_at' => now(), 'created_at' => now(),'updated_at'=>now(), 'remember_token' => Str::random(10), 'apellido' => $request->apellido, 'direccion' => $request->direccion, 'telefono' => $request->telefono, 'foto' => 'assets/images/avatar/' . $fileName]);
+        $user = User::create(['name' => $request->username, 'email' => $request->email, 'password' => Hash::make($request->input('password')), 'email_verified_at' => now(), 'created_at' => now(), 'updated_at' => now(), 'remember_token' => Str::random(10), 'apellido' => $request->apellido, 'direccion' => $request->direccion, 'telefono' => $request->telefono, 'foto' => 'assets/images/avatar/' . $fileName]);
         $user->roles()->sync($request->roles);
         return redirect()->route('usuarios.index');
     }
@@ -114,4 +114,5 @@ class UsersController extends Controller
     {
         dd($id);
     }
+    
 }

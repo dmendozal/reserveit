@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Categoria;
 use Illuminate\Http\Request;
 use App\Categoria;
 use App\Sucursal;
@@ -16,7 +17,8 @@ class CategoriaController extends Controller
      */
     public function index()
     {
-        //
+        $categorias = Categoria::all()->where('estado', '1');
+        return view('categoria.index', compact('categorias'));
     }
 
     /**
@@ -26,7 +28,7 @@ class CategoriaController extends Controller
      */
     public function create()
     {
-        //
+        return view('categoria.create');
     }
 
     /**
@@ -37,7 +39,8 @@ class CategoriaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Categoria::create($request->all());
+        return redirect()->route('categoria.index');
     }
 
     /**
