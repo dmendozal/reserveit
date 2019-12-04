@@ -20,4 +20,9 @@ class EncargadoSucursal extends Model
         'estado'
     ];
     protected $primaryKey = 'idencargado_sucursal';
+
+    public function sucursal()
+    {
+        return $this->hasMany(Sucursal::class, 'fkidencargado_sucursal');
+    }
 }

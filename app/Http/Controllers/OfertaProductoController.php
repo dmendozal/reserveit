@@ -3,8 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\OfertaProducto;
-use App\Producto;
-use App\Sucursal;
+
 use App\SucursalProducto;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -18,8 +17,8 @@ class OfertaProductoController extends Controller
      */
     public function index()
     {
-        //$idsucursal = Auth::user()->encargadoSucursal->sucursal->idsucursal;
-        $ofertaProducto = OfertaProducto::all()->where('estado', '1');
+        $idsucursal = Auth::user()->encargadoSucursal->sucursal[0]->idsucursal;
+        $ofertaProducto = OfertaProducto::all()->where('estado', '1')->where('fkidsucursal', $idsucursal);
         return view('ofertaproducto.index', compact('ofertaProducto'));
     }
 
@@ -31,8 +30,8 @@ class OfertaProductoController extends Controller
     public function create()
     {
         $idsucursal = Auth::user()->encargadoSucursal->sucursal[0]->idsucursal;
-        $productos = SucursalProducto::all()->where('fkidsucursal', $idsucursal);
-        return view('ofertaproducto.create', compact('productos'));
+        $sucursalProducto = SucursalProducto::all()->where('fkidsucursal', $idsucursal);
+        return view('ofertaproducto.create', compact('sucursalProducto'));
     }
 
     /**
@@ -43,7 +42,16 @@ class OfertaProductoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        OfertaProducto::create([
+            'cant_disp' => $request->cant_disp,
+            'precio' => $request->precio,
+            'hora_inicio' => $request->hora_inicio,
+            'hora_fin' => $request->hora_fin,
+            'fkidproducto' => $request->fkidproducto,
+            'fkidsucursal' => $request->fkidsucursal,
+            'fecha' => now(),
+        ]);
+        return redirect()->route('ofertaproducto.index');
     }
 
     /**
@@ -53,9 +61,7 @@ class OfertaProductoController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    {
-        //
-    }
+    { }
 
     /**
      * Show the form for editing the specified resource.
@@ -65,7 +71,8 @@ class OfertaProductoController extends Controller
      */
     public function edit($id)
     {
-        //
+        $ofertaproducto = OfertaProducto::find($id);
+        return view('ofertaproducto.edit', compact('ofertaproducto'));
     }
 
     /**
@@ -77,7 +84,8 @@ class OfertaProductoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        OfertaProducto::find($id)->update($request->all());
+        return redirect()->route('ofertaproducto.index');
     }
 
     /**

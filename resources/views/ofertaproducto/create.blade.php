@@ -64,9 +64,9 @@
                     <div class="col-6 mb-15">
                         <label for="fkidproducto">Producto </label>
                         <select name="fkidproducto" id="fkidproducto" class="form-control ">
-                            @foreach($productos as $id => $producto)
-                            <option value="{{ $producto->idproducto }}">
-                                {{ $producto->nombre }}
+                            @foreach($sucursalProducto as $id => $sp)
+                            <option value="{{ $sp->producto->idproducto }}">
+                                {{ $sp->producto->nombre }}
                             </option>
                             @endforeach
                         </select>
@@ -76,8 +76,10 @@
                         </em>
                         @endif
                     </div>
+                    <input type="text" id="fkidsucursal" name="fkidsucursal" class="form-control"
+                        value="{{ Auth::user()->encargadoSucursal->sucursal[0]->idsucursal }}" hidden>
                     <div style="text-align: center; padding-top: 5%">
-                        <button type="submit" class="btn btn-primary">Registrar Producto</button>
+                        <button type="submit" class="btn btn-primary">Registrar Oferta</button>
                         <a class="btn btn-danger" href="{{ route('producto.index') }}">Cancelar</a>
                     </div>
                 </form>

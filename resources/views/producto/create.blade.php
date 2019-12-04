@@ -66,8 +66,7 @@
                         @endif
                     </div>
                     <input type="text" id="fkidempresa" name="fkidempresa" class="form-control"
-                        value="{{ Auth::user()->encargadoEmpresa->empresa[0]->idempresa ?? Auth::user()->encargadoSucursal->sucursal[0]->encargadoEmpresa->empresa->idempresa  }}"
-                        hidden>
+                        value="{{ Auth::user()->encargadoEmpresa->empresa[0]->idempresa }}" hidden>
                     <div style="text-align: center; padding-top: 5%">
                         <button type="submit" class="btn btn-primary">Registrar Producto</button>
                         <a class="btn btn-danger" href="{{ route('producto.index') }}">Cancelar</a>

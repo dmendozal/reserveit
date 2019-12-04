@@ -43,8 +43,9 @@
                             @foreach ($ofertaProducto as $key => $oferta)
                             <tr>
                                 <td>{{ $key+1 }}</td>
-                                <td>{{ $oferta->cant_dip }}</td>
+                                <td>{{ $oferta->cant_disp }}</td>
                                 <td>{{ $oferta->precio }}</td>
+                                <td>{{ $oferta->fecha }}</td>
                                 <td>{{ $oferta->hora_inicio }}</td>
                                 <td>{{ $oferta->hora_fin }}</td>
                                 <td>{{ $oferta->sucursal->nombre }}</td>
