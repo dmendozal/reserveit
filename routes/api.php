@@ -18,3 +18,13 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('productos','ProductoController@allProducts');
+Route::post('reservas','ReservaController@reservas');
+Route::get('categorys','CategoriaController@allCategorys');
+Route::get('sucursal','CategoriaController@allSucursal');
+Route::get('suscripcionP','ProductoController@productosSuscripcion');
+Route::post('suscribirse','ProductoController@suscribirse');
+Route::post('suscribirsecategory','CategoriaController@suscribirse');
+Route::get('todayreservation/{id}','ReservaController@todayreservation');
+Route::get('allreservation/{id}','ReservaController@allreservation');
+Route::post('calificar','EntregaController@valoracion');
+Route::get('searchp/{nombre}', 'ProductoController@searchProduct');

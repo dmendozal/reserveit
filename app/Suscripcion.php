@@ -14,9 +14,9 @@ class Suscripcion extends Model
         'estado',
         'fkidcliente',
         'fkidcategoria',
-        'fkidempresa',
+        'fkidproducto',
     ];
-    protected $primaryKey = 'idproducto';
+    protected $primaryKey = 'idsuscripcion';
 
     public function encargadoEmpresa()
     {

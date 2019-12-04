@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\EntregaProducto;
 class EntregaController extends Controller
 {
     /**
@@ -80,5 +80,13 @@ class EntregaController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function valoracion(Request $request){
+        $entraga=EntregaProducto::find($request->identrega_producto);
+        $entraga->update(['comentario'=>$request->comentario,'valoracion'=>$request->valoracion]);
+
+        return 1;
+
     }
 }
