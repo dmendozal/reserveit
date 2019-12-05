@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Categoria;
 use Illuminate\Http\Request;
-
+use App\Categoria;
+use App\Sucursal;
+use App\Suscripcion;
+use DB;
 class CategoriaController extends Controller
 {
     /**
@@ -83,5 +86,38 @@ class CategoriaController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function allCategorys()
+    {
+     $category=DB::Table('categoria')
+     ->leftJoin('suscripcion','categoria.idcategoria','=','suscripcion.fkidcategoria')
+     ->select('categoria.*','suscripcion.*')
+     ->get();
+     return $category;
+    }
+    public function allSucursal(){
+        $sucursal=Sucursal::all()->where('estado','=',1);
+        return $sucursal;
+    }
+
+    public function suscribirse(Request $request){
+        if($request->idsuscripcion!=null){
+               $suscripcion=Suscripcion::find($request->idsuscripcion);
+               $suscripcion->delete();
+               return "hola";
+        }else{
+            try{
+                $fecha=date('y-m-d');
+                $suscripcion=new Suscripcion();
+                $suscripcion->fecha=$fecha;
+                $suscripcion->fkidcliente=$request->idcliente;
+                $suscripcion->fkidcategoria=$request->idcategoria;
+                $suscripcion->save();
+                return "carambola";
+            }catch(Exception $e){
+                return $e;
+            }
+        }
     }
 }
