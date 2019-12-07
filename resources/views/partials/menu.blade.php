@@ -113,12 +113,12 @@
                         </li>
                         <li>
                             @can('entrega.acceso')
-                            <a href="#">Gestionar Entrega</a>
+                            <a href="{{ route('entrega.index') }}">Gestionar Entrega</a>
                             @endcan
                         </li>
                     </ul>
                     @endcan
-                    @can('modulo_cliente.acceso')
+                    {{-- @can('modulo_cliente.acceso') --}}
                     <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
                         <i class="ti-layout-grid2"></i>
                         <span class="hide-menu">Modulo Clientes</span>
@@ -126,21 +126,21 @@
                     <ul aria-expanded="false" class="collapse">
                         <li>
                             @can('reserva.acceso')
-                            <a href="#">Gestionar Reserva</a>
+                            <a href="{{ route('reserva.index') }}">Gestionar Reserva</a>
                             @endcan
                         </li>
                         <li>
                             @can('suscripcion.acceso')
-                            <a href="#">Gestionar Suscripcion</a>
+                            <a href="{{ route('suscripcion.index') }}">Gestionar Suscripcion</a>
                             @endcan
                         </li>
                         <li>
                             @can('cliente.acceso')
-                            <a href="#">Gestionar Cliente</a>
+                            <a href="{{ route('cliente.index') }}">Gestionar Cliente</a>
                             @endcan
                         </li>
                     </ul>
-                    @endcan
+                    {{-- @endcan --}}
                 </li>
             </ul>
         </nav>

@@ -7,47 +7,50 @@
     <div class="col-12">
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title">Lista de Empresas</h4>
-                <a class="btn waves-effect waves-light btn-sm btn-primary" href="{{ route('empresa.create')}}"
-                    type="button">Registrar Empresa</a>
+                <h4 class="card-title">Lista de Reservas</h4>
                 <div class="table-responsive m-t-40">
                     <table id="example23" class="display nowrap table table-hover table-striped table-bordered"
                         cellspacing="0" width="100%">
                         <thead>
                             <tr>
                                 <th>Nro</th>
-                                <th>Razon Social</th>
-                                <th>Direccion</th>
-                                <th>Email</th>
-                                <th>Encargado</th>
+                                <th>Cantidad</th>
+                                <th>Monto Total</th>
+                                <th>Fecha</th>
+                                <th>Estado de la Reserva</th>
+                                <th>Codigo de Verificacion</th>
+                                <th>Cliente</th>
                                 <th>Opciones</th>
                             </tr>
                         </thead>
                         <tfoot>
                             <tr>
                                 <th>Nro</th>
-                                <th>Razon Social</th>
-                                <th>Direccion</th>
-                                <th>Email</th>
-                                <th>Encargado</th>
+                                <th>Cantidad</th>
+                                <th>Monto Total</th>
+                                <th>Fecha</th>
+                                <th>Estado de la Reserva</th>
+                                <th>Codigo de Verificacion</th>
+                                <th>Cliente</th>
                                 <th>Opciones</th>
                             </tr>
                         </tfoot>
                         <tbody>
-                            @foreach ($empresas as $key => $empresa)
+                            @foreach ($reservas as $key => $reserva)
                             <tr>
                                 <td>{{ $key+1 }}</td>
-                                <td>{{ $empresa->razon_social }}</td>
-                                <td>{{ $empresa->direccion }}</td>
-                                <td>{{ $empresa->email }}</td>
-                                <td>{{ $empresa->encargadoEmpresa->nombre.' '.$empresa->encargadoEmpresa->apellido }}
-                                </td>
+                                <td>{{ $reserva->cantidad }}</td>
+                                <td>{{ $reserva->mont_tot }}</td>
+                                <td>{{ $reserva->fecha }}</td>
+                                <td>{{ $reserva->est_reser }}</td>
+                                <td>{{ $reserva->cod_seg }}</td>
+                                <td>{{ $reserva->cliente->nombre.' '.$reserva->cliente->apellido }}</td>
                                 <td>
                                     <a class="btn waves-effect waves-light btn-sm btn-success"
-                                        href="{{ route('empresa.show',$empresa->idempresa)}}" type="button">Detalles</a>
+                                        href="{{ route('reserva.show',$reserva->idreserva)}}" type="button">Detalles</a>
                                     <a class="btn waves-effect waves-light btn-sm btn-success"
-                                        href="{{ route('empresa.edit',$empresa->idempresa)}}" type="button">Editar</a>
-                                    <form action="{{ route('empresa.destroy', $empresa->idempresa) }}" method="POST"
+                                        href="{{ route('reserva.edit',$reserva->idreserva)}}" type="button">Editar</a>
+                                    <form action="{{ route('reserva.destroy', $reserva->idreserva) }}" method="POST"
                                         onsubmit="return confirm('¿Está seguro?');" style="display: inline-block;">
                                         <input type="hidden" name="_method" value="DELETE">
                                         <input type="hidden" name="_token" value="{{ csrf_token() }}">

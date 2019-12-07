@@ -17,18 +17,24 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('productos','ProductoController@allProducts');
-Route::post('reservas','ReservaController@reservas');
-Route::get('categorys','CategoriaController@allCategorys');
-Route::get('sucursal','CategoriaController@allSucursal');
-Route::get('suscripcionP','ProductoController@productosSuscripcion');
-Route::post('suscribirse','ProductoController@suscribirse');
-Route::post('suscribirsecategory','CategoriaController@suscribirse');
-Route::get('todayreservation/{id}','ReservaController@todayreservation');
-Route::get('allreservation/{id}','ReservaController@allreservation');
-Route::post('calificar','EntregaController@valoracion');
+Route::get('productos', 'ProductoController@allProducts');
+Route::post('reservas', 'ReservaController@reservas');
+Route::get('categorys', 'CategoriaController@allCategorys');
+Route::get('sucursal', 'CategoriaController@allSucursal');
+Route::get('suscripcionP', 'ProductoController@productosSuscripcion');
+Route::post('suscribirse', 'ProductoController@suscribirse');
+Route::post('suscribirsecategory', 'CategoriaController@suscribirse');
+Route::get('todayreservation/{id}', 'ReservaController@todayreservation');
+Route::get('allreservation/{id}', 'ReservaController@allreservation');
+Route::post('calificar', 'EntregaController@valoracion');
 Route::get('searchp/{nombre}', 'ProductoController@searchProduct');
 Route::get('productos', 'ProductoController@allProducts');
 Route::get('searchp/{nombre}', 'ProductoController@searchProduct');
 Route::get('searchc/{nombre}', 'ProductoController@searchCategory');
 Route::get('searchs/{direccion}', 'ProductoController@searchSucursal');
+Route::post('register', 'ClienteController@store');
+Route::post('settoken', 'ClienteController@setToken');
+Route::post('loginu', 'ClienteController@validateLoginu');
+
+
+Route::get('test', 'TestController@socketIO');

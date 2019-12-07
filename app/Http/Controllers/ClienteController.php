@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Cliente;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class ClienteController extends Controller
 {
@@ -13,7 +16,8 @@ class ClienteController extends Controller
      */
     public function index()
     {
-        //
+        $clientes = Cliente::all()->where('estado', '1');
+        return view('cliente.index', compact('clientes'));
     }
 
     /**
@@ -25,7 +29,12 @@ class ClienteController extends Controller
     {
         //
     }
-
+    public function setToken(Request $request)
+    {
+        $idcliente = $request->get('idcliente');
+        $token = $request->get('token');
+        return Cliente::find($idcliente)->update(['token' => $token]);
+    }
     /**
      * Store a newly created resource in storage.
      *
@@ -34,9 +43,29 @@ class ClienteController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        try {
+            $cliente = new Cliente($request->all());
+            $cliente->sexo = ($request->sexo) ? '1' : '0';
+            $cliente['password'] = Hash::make($cliente['password']);
+            $cliente->save();
+            return 1;
+        } catch (\Throwable $th) {
+            return $th;
+        }
     }
-
+    public function validateLoginu(Request $request)
+    {
+        $cliente = Cliente::where('username', $request->username)->first();
+        if ((bool) $cliente) {
+            if (Hash::check($request->password, $cliente->password)) {
+                return $cliente;
+            } else {
+                return 1;
+            }
+        } else {
+            return 0;
+        }
+    }
     /**
      * Display the specified resource.
      *

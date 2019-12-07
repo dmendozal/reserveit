@@ -42,8 +42,11 @@ Route::group(['middleware' => ['auth']], function () {
     Route::resource('categoria', 'CategoriaController');
     Route::resource('ofertaproducto', 'OfertaProductoController');
     Route::resource('sucursalproducto', 'SucursalProductoController');
-    
 
+    Route::resource('reserva', 'ReservaController');
+    Route::resource('entrega', 'EntregaController');
+    Route::resource('suscripcion', 'SuscripcionController');
+    Route::resource('cliente', 'ClienteController');
 });
 
 Route::get('productos', 'ProductoController@allProducts');

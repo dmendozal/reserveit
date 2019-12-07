@@ -10,7 +10,7 @@ class EntregaProducto extends Model
     public $timestamps = false;
     protected $fillable = ['identrega_producto', 'comentario', 'valoracion', 'fecha', 'fkidreserva'];
     protected $primaryKey = 'identrega_producto';
-    
+
     public function reserva()
     {
         return $this->belongsTo(Reserva::class, 'fkidreserva');

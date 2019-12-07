@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Suscripcion;
 use Illuminate\Http\Request;
 
 class SuscripcionController extends Controller
@@ -13,7 +14,8 @@ class SuscripcionController extends Controller
      */
     public function index()
     {
-        //
+        $suscripciones = Suscripcion::all()->where('estado', '1');
+        return view('suscripcion.index', compact('suscripciones'));
     }
 
     /**

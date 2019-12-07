@@ -21,3 +21,10 @@
     </div>
 </div>
 @endsection
+<script src="{{ asset('assets/node_modules/socket.io-client/dist/socket.io.js') }}"></script>
+<script>
+    var socket = io('http://localhost:8000');
+  socket.on('connect', function(){});
+  socket.on('event', function(data){});
+  socket.on('disconnect', function(){});
+</script>

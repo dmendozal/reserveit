@@ -18,12 +18,16 @@ class Suscripcion extends Model
     ];
     protected $primaryKey = 'idsuscripcion';
 
-    public function encargadoEmpresa()
+    public function cliente()
     {
-        return $this->belongsTo(EncargadoEmpresa::class, 'fkidencargado_empresa');
+        return $this->belongsTo(Cliente::class, 'fkidcliente');
     }
-    public function encargadoSucursal()
+    public function categoria()
     {
-        return $this->belongsTo(EncargadoSucursal::class, 'fkidencargado_sucursal');
+        return $this->belongsTo(Categoria::class, 'fkidcategoria');
+    }
+    public function producto()
+    {
+        return $this->belongsTo(Producto::class, 'fkidproducto');
     }
 }
