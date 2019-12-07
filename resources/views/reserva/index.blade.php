@@ -20,6 +20,7 @@
                                 <th>Estado de la Reserva</th>
                                 <th>Codigo de Verificacion</th>
                                 <th>Cliente</th>
+                                <th>Sucursal</th>
                                 <th>Opciones</th>
                             </tr>
                         </thead>
@@ -32,6 +33,7 @@
                                 <th>Estado de la Reserva</th>
                                 <th>Codigo de Verificacion</th>
                                 <th>Cliente</th>
+                                <th>Sucursal</th>
                                 <th>Opciones</th>
                             </tr>
                         </tfoot>
@@ -45,9 +47,14 @@
                                 <td>{{ $reserva->est_reser }}</td>
                                 <td>{{ $reserva->cod_seg }}</td>
                                 <td>{{ $reserva->cliente->nombre.' '.$reserva->cliente->apellido }}</td>
+                                <td>{{ $reserva->ofertaProducto->sucursal->nombre }}</td>
                                 <td>
+                                    @if($reserva->est_reser != 'Terminado')
                                     <a class="btn waves-effect waves-light btn-sm btn-success"
-                                        href="{{ route('reserva.show',$reserva->idreserva)}}" type="button">Detalles</a>
+                                        href="{{ route('reserva.show',$reserva->idreserva)}}" type="button">Ver
+                                        Ubicacion
+                                    </a>
+                                    @endif
                                     <a class="btn waves-effect waves-light btn-sm btn-success"
                                         href="{{ route('reserva.edit',$reserva->idreserva)}}" type="button">Editar</a>
                                     <form action="{{ route('reserva.destroy', $reserva->idreserva) }}" method="POST"

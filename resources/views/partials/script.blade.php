@@ -15,12 +15,10 @@
 <!-- ============================================================== -->
 <!--morris JavaScript -->
 <script src="{{asset('assets/node_modules/raphael/raphael-min.js')}}"></script>
-<script src="{{asset('assets/node_modules/morrisjs/morris.min.js')}}"></script>
 <script src="{{asset('assets/node_modules/jquery-sparkline/jquery.sparkline.min.js')}}"></script>
 <!-- Popup message jquery -->
 <script src="{{asset('assets/node_modules/toast-master/js/jquery.toast.js')}}"></script>
 <!-- Chart JS -->
-<script src="{{asset('dist/js/dashboard1.js')}}"></script>
 <script src="{{asset('assets/node_modules/toast-master/js/jquery.toast.js')}}"></script>
 
 
@@ -36,7 +34,6 @@
 <script src="{{asset('assets/node_modules/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.js')}}"
     type="text/javascript"></script>
 <script src="{{asset('assets/node_modules/dff/dff.js')}}" type="text/javascript"></script>
-
 
 <script src="{{asset('assets/node_modules/dropify/dist/js/dropify.min.js')}}"></script>
 

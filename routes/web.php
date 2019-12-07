@@ -47,6 +47,8 @@ Route::group(['middleware' => ['auth']], function () {
     Route::resource('entrega', 'EntregaController');
     Route::resource('suscripcion', 'SuscripcionController');
     Route::resource('cliente', 'ClienteController');
+
+    Route::get('mapas', 'MapsController@getMapView');
 });
 
 Route::get('productos', 'ProductoController@allProducts');

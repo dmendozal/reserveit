@@ -9,8 +9,7 @@
     <meta name="author" content="">
     <link rel="icon" type="image/png" sizes="16x16" href="{{asset('assets/images/favicon.png')}}">
     <title>Reserveit - @yield('title')</title>
-    <link href="{{asset('assets/node_modules/morrisjs/morris.css')}}" rel="stylesheet">
-    <link href="{{asset('assets/node_modules/toast-master/css/jquery.toast.css')}}" rel="stylesheet">
+    @stack('estilos')
     <link href="{{asset('dist/css/style.min.css')}}" rel="stylesheet">
     <link href="{{asset('dist/css/pages/dashboard1.css')}}" rel="stylesheet">
     <link rel="stylesheet" type="text/css"
@@ -29,7 +28,7 @@
     <link href="{{asset('assets/node_modules/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.css')}}"
         rel="stylesheet" />
     <link rel="stylesheet" href="{{asset('assets/node_modules/dropify/dist/css/dropify.min.css')}}">
-
+    @yield('styles')
 </head>
 
 <body class="skin-default fixed-layout">
@@ -57,7 +56,7 @@
 
     </div>
 
-
+    @stack('partials.scripts')
     @include('partials.script')
 </body>
 

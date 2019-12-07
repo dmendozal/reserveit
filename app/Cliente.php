@@ -19,8 +19,9 @@ class Cliente extends Model
         'username',
         'password',
         'token',
-        'estado'
+        'estado',
+        'latitud',
+        'longitud'
     ];
     protected $primaryKey = 'idcliente';
-
 }
