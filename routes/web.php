@@ -10,7 +10,6 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/', function () {
     return view('auth.login');
 });
@@ -49,6 +48,6 @@ Route::group(['middleware' => ['auth']], function () {
     Route::resource('cliente', 'ClienteController');
 
     Route::get('mapas', 'MapsController@getMapView');
-});
 
+});
 Route::get('productos', 'ProductoController@allProducts');

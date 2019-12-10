@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="icon" type="image/png" sizes="16x16" href="{{asset('assets/images/favicon.png')}}">
     <title>Reserveit - @yield('title')</title>
     @stack('estilos')
@@ -28,6 +29,10 @@
     <link href="{{asset('assets/node_modules/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.css')}}"
         rel="stylesheet" />
     <link rel="stylesheet" href="{{asset('assets/node_modules/dropify/dist/css/dropify.min.css')}}">
+    <script>
+        window.laravel_echo_port='{{ env("LARAVEL_ECHO_PORT")}}';
+        console.log(window.laravel_echo_port);
+    </script>
     @yield('styles')
 </head>
 

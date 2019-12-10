@@ -36,5 +36,7 @@ Route::post('register', 'ClienteController@store');
 Route::post('settoken', 'ClienteController@setToken');
 Route::post('loginu', 'ClienteController@validateLoginu');
 
-
 Route::get('test', 'TestController@socketIO');
+Route::get('tracking/{latitud},{longitud}', function ($latitud, $longitud) {
+    broadcast(new App\Events\SocketsEvent($latitud,$longitud));
+});

@@ -31,9 +31,12 @@
         </div>
     </div>
 </div>
+<div id="app"> </div>
 @endsection
 
 @push('partials.scripts')
+<script src="{{ url('/js/bootstrap.js') }}" type="text/javascript"></script>
+
 <script>
     var map;
     var sucurLatLng = {
@@ -49,6 +52,8 @@
         center: {lat: -17.785173, lng: -63.181163},
         zoom: 13
     });
+
+    console.log(map);
     //ubicacion de la sucursal
     var marker = new google.maps.Marker({
     position: sucurLatLng,
@@ -61,20 +66,40 @@
     map: map,
     title: '{!! $reserva->cliente->nombre !!}'
     });
+        let channel = window.Echo.channel('home');
+        channel.listen('.SocketsEvent',function(data){
+        var myLatLng = {lat: parseFloat(data.latitud) , lng: parseFloat(data.longitud)};
+        console.log(myLatLng);
+        var marker = new google.maps.Marker({
+            position: myLatLng,
+            title: '{!! $reserva->cliente->nombre !!}',
+            map: map
+            });
+        });
     }
 </script>
 <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBdG9dbToS4EEPT5rvxhdbLKZxiG6l8YPI&callback=initMap">
 </script>
-{{--  <script async defer
-  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD2UerqDnvs5Tvz4u8TWMs-ouvVRuZZlJ0&callback=initMap">
-</script>  --}}
-@endpush
-{{-- <script src="{{ asset('assets/node_modules/socket.io-client/dist/socket.io.js') }}"></script>
 <script>
-  var socket = io('http://localhost');
-  socket.on('connect', function(){});
-  socket.on('event', function(data){});
-  socket.on('disconnect', function(){});
-</script> --}}
 
+</script>
+
+@endpush
+
+<script src="{{ asset('assets/node_modules/socket.io-client/dist/socket.io.js') }}"></script>
+
+
+{{-- <script>
+     var socket = io('http://192.168.0.106:6001');
+  socket.on('home:App\\Events\\SocketsEvent', function(message){
+    console.log('CONECTADO',message);
+  });
+  socket.on('event', function(data){
+      console.log(data);
+  });
+  socket.on('disconnect', function(){
+      console.log('DESCONECTADO')
+  });
+  console.log(socket);
+</script> --}}
