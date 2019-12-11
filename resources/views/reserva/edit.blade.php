@@ -13,8 +13,11 @@
                     @method('PUT')
                     <div class="col-6 mb-15">
                         <label for="est_reser">Estado de la reserva</label>
-                        <input type="text" id="est_reser" name="est_reser" class="form-control"
-                            value="{{ old('est_reser', isset($reserva) ? $reserva->est_reser : '') }}">
+                        <input type="text" id="" name="estado" class="form-control" value="0" style="display: none"/>
+                        <select class="form-control custom-select" data-placeholder="Choose a Category" name="est_reser" tabindex="1">
+                                <option value="Terminado">Terminado</option>
+                                <option value="En proceso">En proceso</option>
+                        </select>
                         @if($errors->has('est_reser'))
                         <em class="invalid-feedback">
                             {{ $errors->first('est_reser') }}

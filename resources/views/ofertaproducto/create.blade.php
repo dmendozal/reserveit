@@ -20,7 +20,7 @@
                     class="smart-form" role="form">
                     @csrf
                     {{ csrf_field() }}
-                    <div class="col-6 mb-15">
+                    <div class="col-12 mb-15">
                         <label for="cant_disp">Cantidad Disponible</label>
                         <input type="number" id="cant_disp" name="cant_disp" class="form-control"
                             value="{{ old('cant_disp', isset($ofertaProducto) ? $ofertaProducto->cant_disp : '') }}"
@@ -31,7 +31,7 @@
                         </em>
                         @endif
                     </div>
-                    <div class="col-6 mb-15">
+                    <div class="col-12 mb-15">
                         <label for="precio">Precio</label>
                         <input type="text" id="precio" name="precio" class="form-control"
                             value="{{ old('precio', isset($ofertaProducto) ? $ofertaProducto->precio : '') }}">
@@ -41,7 +41,7 @@
                         </em>
                         @endif
                     </div>
-                    <div class="col-6 mb-15">
+                    <div class="col-12 mb-15">
                         <label for="hora_inicio">Hora de Inicio</label>
                         <input type="time" id="hora_inicio" name="hora_inicio" class="form-control"
                             value="{{ old('hora_inicio', isset($ofertaProducto) ? $ofertaProducto->hora_inicio : '') }}">
@@ -51,7 +51,7 @@
                         </em>
                         @endif
                     </div>
-                    <div class="col-6 mb-15">
+                    <div class="col-12 mb-15">
                         <label for="hora_fin">Hora de Fin</label>
                         <input type="time" id="hora_fin" name="hora_fin" class="form-control"
                             value="{{ old('hora_fin', isset($ofertaProducto) ? $ofertaProducto->hora_fin : '') }}">
@@ -61,7 +61,7 @@
                         </em>
                         @endif
                     </div>
-                    <div class="col-6 mb-15">
+                    <div class="col-12">
                         <label for="fkidproducto">Producto </label>
                         <select name="fkidproducto" id="fkidproducto" class="form-control ">
                             @foreach($sucursalProducto as $id => $sp)

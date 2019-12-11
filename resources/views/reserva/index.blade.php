@@ -14,6 +14,7 @@
                         <thead>
                             <tr>
                                 <th>Nro</th>
+                                <th>Producto</th>
                                 <th>Cantidad</th>
                                 <th>Monto Total</th>
                                 <th>Fecha</th>
@@ -27,6 +28,7 @@
                         <tfoot>
                             <tr>
                                 <th>Nro</th>
+                                <th>Producto</th>
                                 <th>Cantidad</th>
                                 <th>Monto Total</th>
                                 <th>Fecha</th>
@@ -41,6 +43,7 @@
                             @foreach ($reservas as $key => $reserva)
                             <tr>
                                 <td>{{ $key+1 }}</td>
+                                <td>{{$reserva->ofertaProducto->producto->nombre}}</td>
                                 <td>{{ $reserva->cantidad }}</td>
                                 <td>{{ $reserva->mont_tot }}</td>
                                 <td>{{ $reserva->fecha }}</td>
@@ -55,8 +58,8 @@
                                         Ubicacion
                                     </a>
                                     @endif
-                                    <a class="btn waves-effect waves-light btn-sm btn-success"
-                                        href="{{ route('reserva.edit',$reserva->idreserva)}}" type="button">Editar</a>
+                                    <a class="btn waves-effect waves-light btn-sm btn-primary"
+                                        href="{{ route('reserva.edit',$reserva->idreserva)}}" type="button">Entregar producto</a>
                                     <form action="{{ route('reserva.destroy', $reserva->idreserva) }}" method="POST"
                                         onsubmit="return confirm('¿Está seguro?');" style="display: inline-block;">
                                         <input type="hidden" name="_method" value="DELETE">

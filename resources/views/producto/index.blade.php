@@ -17,7 +17,7 @@
                             <tr>
                                 <th>Nro</th>
                                 <th>Nombre</th>
-                                <th>Descripcion</th>
+                                <th style="width: 100px">Descripcion</th>
                                 <th>Imagen</th>
                                 <th>Categoria</th>
                                 <th>Opciones</th>
@@ -27,7 +27,7 @@
                             <tr>
                                 <th>Nro</th>
                                 <th>Nombre</th>
-                                <th>Descripcion</th>
+                                <th style="width: 100px">Descripcion</th>
                                 <th>Imagen</th>
                                 <th>Categoria</th>
                                 <th>Opciones</th>
@@ -39,7 +39,7 @@
                                 <td>{{ $key+1 }}</td>
                                 <td>{{ $producto->nombre }}</td>
                                 <td>{{ $producto->descripcion }}</td>
-                                <td><img src="{{ $producto->imagen }}" style="width: 10%; height: 10%" alt=""></td>
+                                <td><img src="{{ $producto->imagen }}" style="height:100px;width: 100px;" alt=""></td>
                                 <td>{{ $producto->categoria->nombre }}</td>
                                 <td>
                                     <a class="btn waves-effect waves-light btn-sm btn-success"

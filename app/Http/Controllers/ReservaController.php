@@ -80,7 +80,6 @@ class ReservaController extends Controller
         EntregaProducto::create([
             'fecha' => now(),
             'fkidreserva' => $reserva->idreserva,
-
         ]);
         return redirect()->route('reserva.index');
     }
@@ -135,6 +134,7 @@ class ReservaController extends Controller
             ->join('sucursal', 'sucursal.idsucursal', '=', 'oferta_producto.fkidsucursal')
             ->orderBy('reserva.fecha', 'DESC')
             ->where('reserva.estado', '=', '1')
+            ->where('est_reser','=','En proceso')
             ->where('reserva.fkidcliente', '=', $id)
             ->get();
         return $result;
